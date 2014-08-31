@@ -6,7 +6,6 @@ html(lang="en")
 		script(type="text/javascript" src="../jquery-1.10.2.js")
 		script(type="text/javascript" src="../sudoku.js")
 	body
-		
 		div#container
 			main#content
 				div#selection
@@ -23,9 +22,14 @@ html(lang="en")
 							while col < 9
 								- var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
 								- var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
-								- var string = sudokuObj[row][col]=='.'?'':sudokuObj[row][col]
-								div(class=("sudoku_cell " + borderLeft + borderTop).trim(),
-									\data-row=row, data-col=col)=string
+								- var string = sudokuObj[row][col] == '.'? '' : sudokuObj[row][col]
+								- var preset = string == '' ? '':'preset '
+								div(class=("sudoku_cell " + preset + borderLeft + borderTop).trim(),
+									\data-row=row, data-col=col)
+									if string == ''
+										h2 &nbsp
+									else 
+										h2=string
 								- col++
 							- row++
 							- col = 0

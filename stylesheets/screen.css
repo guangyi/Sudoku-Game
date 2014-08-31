@@ -67,20 +67,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 #container {
   background: #FFAD00;
   padding: 1em;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 #content {
   width: 54em;
   margin-left: auto;
   margin-right: auto;
   display: table;
 }
-/* line 28, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 #content #selection {
   display: block;
   margin-bottom: 1em;
@@ -89,18 +89,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-right: auto;
   overflow: hidden;
 }
-/* line 35, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 #content #selection .number {
   text-align: center;
   line-height: 5em;
   float: left;
-  width: 5.2em;
+  width: 5em;
   height: 5em;
   margin-left: 0.5em;
   background: #fff;
   border: 1px solid #9ee0ff;
 }
-/* line 36, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 #content #selection .number:last-child {
   margin-right: 0.5em;
 }
@@ -127,15 +127,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 66, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
+#content #board_wrapper .wrapper .sudoku_cell h2 {
+  height: 100%;
+  font-size: 1.5em;
+}
+/* line 70, ../sass/screen.scss */
 #content #board_wrapper .wrapper .cell_onclick {
   background: #666888;
 }
-/* line 69, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 #content #board_wrapper .wrapper .border_left {
   border-left-width: 5px;
 }
-/* line 72, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 #content #board_wrapper .wrapper .border_top {
   border-top-width: 5px;
 }

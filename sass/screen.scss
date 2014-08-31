@@ -7,9 +7,10 @@
 @import "compass/css3";
 $border-color: #9EE0FF;
 %vertical-align {
+  text-align:center;
   position: relative;
   top: 50%;
-  @include transform(-50%);
+  @include transform(translateY -50%);
 }
 
 @mixin textcenter($lineHeight) {
@@ -35,9 +36,8 @@ $border-color: #9EE0FF;
 		.number {
 			&:last-child { margin-right:0.5em;}
 			@include textcenter(5em);
-			//@extend %vertical-align;
 			float:left;
-			width:5.2em;
+			width:5em;
 			height:5em;
 			margin-left: 0.5em;
 			background:#fff;
@@ -55,11 +55,15 @@ $border-color: #9EE0FF;
 		.wrapper{
 			.sudoku_cell {
 				@include textcenter(6em);
-				//@extend %vertical-align;
+				//& h2{@extend %vertical-align;}
 				position:relative;
 				display:table-cell;
 				width:6em;
 				height:6em;
+				& h2 {
+					height:100%;
+					font-size:1.5em;
+				}
 				border:1px solid $border-color;
 				@include box-sizing(border-box);
 			}

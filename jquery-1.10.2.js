@@ -4094,7 +4094,6 @@ jQuery.fn.extend({
 		if ( proceed ) {
 			// The disjunction here is for better compressibility (see removeClass)
 			classes = ( value || "" ).match( core_rnotwhite ) || [];
-			console.log('guangyi', classes);
 			for ( ; i < len; i++ ) {
 				elem = this[ i ];
 				cur = elem.nodeType === 1 && ( elem.className ?
