@@ -1,0 +1,60 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+$border-color: #9EE0FF;
+@mixin textcenter($lineHeight) {
+	text-align:center;
+	line-height:$lineHeight;
+}
+#container {
+	background: #FFAD00;
+	padding:1em;
+}
+#content {
+	width:54em;// 864/16 = 54em
+	margin-left:auto;
+	margin-right:auto;
+	display:table;
+	#selection {
+		display:block;
+		margin-bottom:1em;
+		width:98%;
+		margin-left:auto;
+		margin-right:auto;
+		overflow: hidden;
+		.number {
+			&:last-child { margin-right:0.5em;}
+			@include textcenter(5em);
+			float:left;
+			width:5.2em;
+			height:5em;
+			margin-left: 0.5em;
+			background:#fff;
+			border:1px solid $border-color;
+		}
+	}
+	#border_wrapper{
+		background:#FFF;
+		position:relative;
+		display:table;
+		.sudoku_cell {
+			@include textcenter(6em);
+			position:relative;
+			display:inline-block;
+			width:6em;
+			height:6em;
+			border:1px solid $border-color;
+			@include box-sizing(border-box);
+		}
+		.border_left {
+			border-left-width:5px;
+		}
+		.border_top {
+			border-top-width:5px;
+		}
+	}
+}

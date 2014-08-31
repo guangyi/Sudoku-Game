@@ -1,0 +1,24 @@
+doctype html
+html(lang="ed")
+	head
+		title="Sudoku Game"
+		link(rel="stylesheet",type="text/css", media="screen, projection", href="../stylesheets/screen.css")
+	body
+		div#container
+			main#content
+				div#selection
+					- var n = 1
+					while n < 10
+						div.number
+							h2=n++
+				div#border_wrapper
+					- var col = 0
+					- var row = 0
+					while row < 9
+						while col < 9
+							- var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
+							- var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
+							div(class=("sudoku_cell " + borderLeft + borderTop).trim(),top = row * 90 + 'px',
+								\data-row=row, data-col=col)=col++
+						- row++
+						- col = 0
