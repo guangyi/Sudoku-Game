@@ -1,9 +1,12 @@
 doctype html
-html(lang="ed")
+html(lang="en")
 	head
 		title="Sudoku Game"
 		link(rel="stylesheet",type="text/css", media="screen, projection", href="../stylesheets/screen.css")
+		script(type="text/javascript" src="../jquery-1.10.2.js")
+		script(type="text/javascript" src="../sudoku.js")
 	body
+		
 		div#container
 			main#content
 				div#selection
@@ -11,14 +14,18 @@ html(lang="ed")
 					while n < 10
 						div.number
 							h2=n++
-				div#border_wrapper
+				div#board_wrapper
 					- var col = 0
 					- var row = 0
+					- var sudokuObj = [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],['.', '.', '.', '.', '.' ,'.', '.' ,'.', '.'],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],['.', '.', '.', '.', '.' ,'.', '.' ,'.', '.']]
 					while row < 9
-						while col < 9
-							- var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
-							- var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
-							div(class=("sudoku_cell " + borderLeft + borderTop).trim(),top = row * 90 + 'px',
-								\data-row=row, data-col=col)=col++
-						- row++
-						- col = 0
+						div.wrapper(display="table", width="100%", top=row * 90 + 'px')
+							while col < 9
+								- var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
+								- var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
+								- var string = sudokuObj[row][col]=='.'?'':sudokuObj[row][col]
+								div(class=("sudoku_cell " + borderLeft + borderTop).trim(),
+									\data-row=row, data-col=col)=string
+								- col++
+							- row++
+							- col = 0

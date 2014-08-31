@@ -67,20 +67,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 13, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
 #container {
   background: #FFAD00;
   padding: 1em;
 }
 
-/* line 17, ../sass/screen.scss */
+/* line 23, ../sass/screen.scss */
 #content {
   width: 54em;
   margin-left: auto;
   margin-right: auto;
   display: table;
 }
-/* line 22, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 #content #selection {
   display: block;
   margin-bottom: 1em;
@@ -89,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-right: auto;
   overflow: hidden;
 }
-/* line 29, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 #content #selection .number {
   text-align: center;
   line-height: 5em;
@@ -100,22 +100,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: #fff;
   border: 1px solid #9ee0ff;
 }
-/* line 30, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 #content #selection .number:last-child {
   margin-right: 0.5em;
 }
-/* line 40, ../sass/screen.scss */
-#content #border_wrapper {
+/* line 45, ../sass/screen.scss */
+#content #selection .number:hover {
+  background: #445566;
+}
+/* line 51, ../sass/screen.scss */
+#content #board_wrapper {
   background: #FFF;
   position: relative;
   display: table;
 }
-/* line 44, ../sass/screen.scss */
-#content #border_wrapper .sudoku_cell {
+/* line 56, ../sass/screen.scss */
+#content #board_wrapper .wrapper .sudoku_cell {
   text-align: center;
   line-height: 6em;
   position: relative;
-  display: inline-block;
+  display: table-cell;
   width: 6em;
   height: 6em;
   border: 1px solid #9ee0ff;
@@ -123,11 +127,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 53, ../sass/screen.scss */
-#content #border_wrapper .border_left {
+/* line 66, ../sass/screen.scss */
+#content #board_wrapper .wrapper .cell_onclick {
+  background: #666888;
+}
+/* line 69, ../sass/screen.scss */
+#content #board_wrapper .wrapper .border_left {
   border-left-width: 5px;
 }
-/* line 56, ../sass/screen.scss */
-#content #border_wrapper .border_top {
+/* line 72, ../sass/screen.scss */
+#content #board_wrapper .wrapper .border_top {
   border-top-width: 5px;
 }

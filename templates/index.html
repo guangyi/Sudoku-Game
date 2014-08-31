@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="ed">
+<html lang="en">
   <head>
     <title>Sudoku Game</title>
     <link rel="stylesheet" type="text/css" media="screen, projection" href="../stylesheets/screen.css">
+    <script type="text/javascript" src="../jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../sudoku.js"></script>
   </head>
   <body>
     <div id="container">
@@ -36,88 +38,106 @@
             <h2>9</h2>
           </div>
         </div>
-        <div id="border_wrapper">
-          <div top="0px" data-row='0' data-col='0' class="sudoku_cell">0</div>
-          <div top="0px" data-row='0' data-col='1' class="sudoku_cell">1</div>
-          <div top="0px" data-row='0' data-col='2' class="sudoku_cell">2</div>
-          <div top="0px" data-row='0' data-col='3' class="sudoku_cell border_left">3</div>
-          <div top="0px" data-row='0' data-col='4' class="sudoku_cell">4</div>
-          <div top="0px" data-row='0' data-col='5' class="sudoku_cell">5</div>
-          <div top="0px" data-row='0' data-col='6' class="sudoku_cell border_left">6</div>
-          <div top="0px" data-row='0' data-col='7' class="sudoku_cell">7</div>
-          <div top="0px" data-row='0' data-col='8' class="sudoku_cell">8</div>
-          <div top="90px" data-row='1' data-col='0' class="sudoku_cell">0</div>
-          <div top="90px" data-row='1' data-col='1' class="sudoku_cell">1</div>
-          <div top="90px" data-row='1' data-col='2' class="sudoku_cell">2</div>
-          <div top="90px" data-row='1' data-col='3' class="sudoku_cell border_left">3</div>
-          <div top="90px" data-row='1' data-col='4' class="sudoku_cell">4</div>
-          <div top="90px" data-row='1' data-col='5' class="sudoku_cell">5</div>
-          <div top="90px" data-row='1' data-col='6' class="sudoku_cell border_left">6</div>
-          <div top="90px" data-row='1' data-col='7' class="sudoku_cell">7</div>
-          <div top="90px" data-row='1' data-col='8' class="sudoku_cell">8</div>
-          <div top="180px" data-row='2' data-col='0' class="sudoku_cell">0</div>
-          <div top="180px" data-row='2' data-col='1' class="sudoku_cell">1</div>
-          <div top="180px" data-row='2' data-col='2' class="sudoku_cell">2</div>
-          <div top="180px" data-row='2' data-col='3' class="sudoku_cell border_left">3</div>
-          <div top="180px" data-row='2' data-col='4' class="sudoku_cell">4</div>
-          <div top="180px" data-row='2' data-col='5' class="sudoku_cell">5</div>
-          <div top="180px" data-row='2' data-col='6' class="sudoku_cell border_left">6</div>
-          <div top="180px" data-row='2' data-col='7' class="sudoku_cell">7</div>
-          <div top="180px" data-row='2' data-col='8' class="sudoku_cell">8</div>
-          <div top="270px" data-row='3' data-col='0' class="sudoku_cell border_top">0</div>
-          <div top="270px" data-row='3' data-col='1' class="sudoku_cell border_top">1</div>
-          <div top="270px" data-row='3' data-col='2' class="sudoku_cell border_top">2</div>
-          <div top="270px" data-row='3' data-col='3' class="sudoku_cell border_left border_top">3</div>
-          <div top="270px" data-row='3' data-col='4' class="sudoku_cell border_top">4</div>
-          <div top="270px" data-row='3' data-col='5' class="sudoku_cell border_top">5</div>
-          <div top="270px" data-row='3' data-col='6' class="sudoku_cell border_left border_top">6</div>
-          <div top="270px" data-row='3' data-col='7' class="sudoku_cell border_top">7</div>
-          <div top="270px" data-row='3' data-col='8' class="sudoku_cell border_top">8</div>
-          <div top="360px" data-row='4' data-col='0' class="sudoku_cell">0</div>
-          <div top="360px" data-row='4' data-col='1' class="sudoku_cell">1</div>
-          <div top="360px" data-row='4' data-col='2' class="sudoku_cell">2</div>
-          <div top="360px" data-row='4' data-col='3' class="sudoku_cell border_left">3</div>
-          <div top="360px" data-row='4' data-col='4' class="sudoku_cell">4</div>
-          <div top="360px" data-row='4' data-col='5' class="sudoku_cell">5</div>
-          <div top="360px" data-row='4' data-col='6' class="sudoku_cell border_left">6</div>
-          <div top="360px" data-row='4' data-col='7' class="sudoku_cell">7</div>
-          <div top="360px" data-row='4' data-col='8' class="sudoku_cell">8</div>
-          <div top="450px" data-row='5' data-col='0' class="sudoku_cell">0</div>
-          <div top="450px" data-row='5' data-col='1' class="sudoku_cell">1</div>
-          <div top="450px" data-row='5' data-col='2' class="sudoku_cell">2</div>
-          <div top="450px" data-row='5' data-col='3' class="sudoku_cell border_left">3</div>
-          <div top="450px" data-row='5' data-col='4' class="sudoku_cell">4</div>
-          <div top="450px" data-row='5' data-col='5' class="sudoku_cell">5</div>
-          <div top="450px" data-row='5' data-col='6' class="sudoku_cell border_left">6</div>
-          <div top="450px" data-row='5' data-col='7' class="sudoku_cell">7</div>
-          <div top="450px" data-row='5' data-col='8' class="sudoku_cell">8</div>
-          <div top="540px" data-row='6' data-col='0' class="sudoku_cell border_top">0</div>
-          <div top="540px" data-row='6' data-col='1' class="sudoku_cell border_top">1</div>
-          <div top="540px" data-row='6' data-col='2' class="sudoku_cell border_top">2</div>
-          <div top="540px" data-row='6' data-col='3' class="sudoku_cell border_left border_top">3</div>
-          <div top="540px" data-row='6' data-col='4' class="sudoku_cell border_top">4</div>
-          <div top="540px" data-row='6' data-col='5' class="sudoku_cell border_top">5</div>
-          <div top="540px" data-row='6' data-col='6' class="sudoku_cell border_left border_top">6</div>
-          <div top="540px" data-row='6' data-col='7' class="sudoku_cell border_top">7</div>
-          <div top="540px" data-row='6' data-col='8' class="sudoku_cell border_top">8</div>
-          <div top="630px" data-row='7' data-col='0' class="sudoku_cell">0</div>
-          <div top="630px" data-row='7' data-col='1' class="sudoku_cell">1</div>
-          <div top="630px" data-row='7' data-col='2' class="sudoku_cell">2</div>
-          <div top="630px" data-row='7' data-col='3' class="sudoku_cell border_left">3</div>
-          <div top="630px" data-row='7' data-col='4' class="sudoku_cell">4</div>
-          <div top="630px" data-row='7' data-col='5' class="sudoku_cell">5</div>
-          <div top="630px" data-row='7' data-col='6' class="sudoku_cell border_left">6</div>
-          <div top="630px" data-row='7' data-col='7' class="sudoku_cell">7</div>
-          <div top="630px" data-row='7' data-col='8' class="sudoku_cell">8</div>
-          <div top="720px" data-row='8' data-col='0' class="sudoku_cell">0</div>
-          <div top="720px" data-row='8' data-col='1' class="sudoku_cell">1</div>
-          <div top="720px" data-row='8' data-col='2' class="sudoku_cell">2</div>
-          <div top="720px" data-row='8' data-col='3' class="sudoku_cell border_left">3</div>
-          <div top="720px" data-row='8' data-col='4' class="sudoku_cell">4</div>
-          <div top="720px" data-row='8' data-col='5' class="sudoku_cell">5</div>
-          <div top="720px" data-row='8' data-col='6' class="sudoku_cell border_left">6</div>
-          <div top="720px" data-row='8' data-col='7' class="sudoku_cell">7</div>
-          <div top="720px" data-row='8' data-col='8' class="sudoku_cell">8</div>
+        <div id="board_wrapper">
+          <div display="table" width="100%" top="0px" class="wrapper">
+            <div data-row='0' data-col='0' class="sudoku_cell">1</div>
+            <div data-row='0' data-col='1' class="sudoku_cell">2</div>
+            <div data-row='0' data-col='2' class="sudoku_cell">3</div>
+            <div data-row='0' data-col='3' class="sudoku_cell border_left">4</div>
+            <div data-row='0' data-col='4' class="sudoku_cell">5</div>
+            <div data-row='0' data-col='5' class="sudoku_cell">6</div>
+            <div data-row='0' data-col='6' class="sudoku_cell border_left">7</div>
+            <div data-row='0' data-col='7' class="sudoku_cell">8</div>
+            <div data-row='0' data-col='8' class="sudoku_cell">9</div>
+          </div>
+          <div display="table" width="100%" top="90px" class="wrapper">
+            <div data-row='1' data-col='0' class="sudoku_cell">1</div>
+            <div data-row='1' data-col='1' class="sudoku_cell">2</div>
+            <div data-row='1' data-col='2' class="sudoku_cell">3</div>
+            <div data-row='1' data-col='3' class="sudoku_cell border_left">4</div>
+            <div data-row='1' data-col='4' class="sudoku_cell">5</div>
+            <div data-row='1' data-col='5' class="sudoku_cell">6</div>
+            <div data-row='1' data-col='6' class="sudoku_cell border_left">7</div>
+            <div data-row='1' data-col='7' class="sudoku_cell">8</div>
+            <div data-row='1' data-col='8' class="sudoku_cell">9</div>
+          </div>
+          <div display="table" width="100%" top="180px" class="wrapper">
+            <div data-row='2' data-col='0' class="sudoku_cell">1</div>
+            <div data-row='2' data-col='1' class="sudoku_cell">2</div>
+            <div data-row='2' data-col='2' class="sudoku_cell">3</div>
+            <div data-row='2' data-col='3' class="sudoku_cell border_left">4</div>
+            <div data-row='2' data-col='4' class="sudoku_cell">5</div>
+            <div data-row='2' data-col='5' class="sudoku_cell">6</div>
+            <div data-row='2' data-col='6' class="sudoku_cell border_left">7</div>
+            <div data-row='2' data-col='7' class="sudoku_cell">8</div>
+            <div data-row='2' data-col='8' class="sudoku_cell">9</div>
+          </div>
+          <div display="table" width="100%" top="270px" class="wrapper">
+            <div data-row='3' data-col='0' class="sudoku_cell border_top"></div>
+            <div data-row='3' data-col='1' class="sudoku_cell border_top"></div>
+            <div data-row='3' data-col='2' class="sudoku_cell border_top"></div>
+            <div data-row='3' data-col='3' class="sudoku_cell border_left border_top"></div>
+            <div data-row='3' data-col='4' class="sudoku_cell border_top"></div>
+            <div data-row='3' data-col='5' class="sudoku_cell border_top"></div>
+            <div data-row='3' data-col='6' class="sudoku_cell border_left border_top"></div>
+            <div data-row='3' data-col='7' class="sudoku_cell border_top"></div>
+            <div data-row='3' data-col='8' class="sudoku_cell border_top"></div>
+          </div>
+          <div display="table" width="100%" top="360px" class="wrapper">
+            <div data-row='4' data-col='0' class="sudoku_cell">1</div>
+            <div data-row='4' data-col='1' class="sudoku_cell">2</div>
+            <div data-row='4' data-col='2' class="sudoku_cell">3</div>
+            <div data-row='4' data-col='3' class="sudoku_cell border_left">4</div>
+            <div data-row='4' data-col='4' class="sudoku_cell">5</div>
+            <div data-row='4' data-col='5' class="sudoku_cell">6</div>
+            <div data-row='4' data-col='6' class="sudoku_cell border_left">7</div>
+            <div data-row='4' data-col='7' class="sudoku_cell">8</div>
+            <div data-row='4' data-col='8' class="sudoku_cell">9</div>
+          </div>
+          <div display="table" width="100%" top="450px" class="wrapper">
+            <div data-row='5' data-col='0' class="sudoku_cell">1</div>
+            <div data-row='5' data-col='1' class="sudoku_cell">2</div>
+            <div data-row='5' data-col='2' class="sudoku_cell">3</div>
+            <div data-row='5' data-col='3' class="sudoku_cell border_left">4</div>
+            <div data-row='5' data-col='4' class="sudoku_cell">5</div>
+            <div data-row='5' data-col='5' class="sudoku_cell">6</div>
+            <div data-row='5' data-col='6' class="sudoku_cell border_left">7</div>
+            <div data-row='5' data-col='7' class="sudoku_cell">8</div>
+            <div data-row='5' data-col='8' class="sudoku_cell">9</div>
+          </div>
+          <div display="table" width="100%" top="540px" class="wrapper">
+            <div data-row='6' data-col='0' class="sudoku_cell border_top">1</div>
+            <div data-row='6' data-col='1' class="sudoku_cell border_top">2</div>
+            <div data-row='6' data-col='2' class="sudoku_cell border_top">3</div>
+            <div data-row='6' data-col='3' class="sudoku_cell border_left border_top">4</div>
+            <div data-row='6' data-col='4' class="sudoku_cell border_top">5</div>
+            <div data-row='6' data-col='5' class="sudoku_cell border_top">6</div>
+            <div data-row='6' data-col='6' class="sudoku_cell border_left border_top">7</div>
+            <div data-row='6' data-col='7' class="sudoku_cell border_top">8</div>
+            <div data-row='6' data-col='8' class="sudoku_cell border_top">9</div>
+          </div>
+          <div display="table" width="100%" top="630px" class="wrapper">
+            <div data-row='7' data-col='0' class="sudoku_cell">1</div>
+            <div data-row='7' data-col='1' class="sudoku_cell">2</div>
+            <div data-row='7' data-col='2' class="sudoku_cell">3</div>
+            <div data-row='7' data-col='3' class="sudoku_cell border_left">4</div>
+            <div data-row='7' data-col='4' class="sudoku_cell">5</div>
+            <div data-row='7' data-col='5' class="sudoku_cell">6</div>
+            <div data-row='7' data-col='6' class="sudoku_cell border_left">7</div>
+            <div data-row='7' data-col='7' class="sudoku_cell">8</div>
+            <div data-row='7' data-col='8' class="sudoku_cell">9</div>
+          </div>
+          <div display="table" width="100%" top="720px" class="wrapper">
+            <div data-row='8' data-col='0' class="sudoku_cell"></div>
+            <div data-row='8' data-col='1' class="sudoku_cell"></div>
+            <div data-row='8' data-col='2' class="sudoku_cell"></div>
+            <div data-row='8' data-col='3' class="sudoku_cell border_left"></div>
+            <div data-row='8' data-col='4' class="sudoku_cell"></div>
+            <div data-row='8' data-col='5' class="sudoku_cell"></div>
+            <div data-row='8' data-col='6' class="sudoku_cell border_left"></div>
+            <div data-row='8' data-col='7' class="sudoku_cell"></div>
+            <div data-row='8' data-col='8' class="sudoku_cell"></div>
+          </div>
         </div>
       </main>
     </div>

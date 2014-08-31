@@ -6,6 +6,12 @@
 @import "compass/reset";
 @import "compass/css3";
 $border-color: #9EE0FF;
+%vertical-align {
+  position: relative;
+  top: 50%;
+  @include transform(-50%);
+}
+
 @mixin textcenter($lineHeight) {
 	text-align:center;
 	line-height:$lineHeight;
@@ -29,32 +35,44 @@ $border-color: #9EE0FF;
 		.number {
 			&:last-child { margin-right:0.5em;}
 			@include textcenter(5em);
+			//@extend %vertical-align;
 			float:left;
 			width:5.2em;
 			height:5em;
 			margin-left: 0.5em;
 			background:#fff;
 			border:1px solid $border-color;
+			&:hover {
+				background:#445566;
+			}
 		}
+		
 	}
-	#border_wrapper{
+	#board_wrapper{
 		background:#FFF;
 		position:relative;
 		display:table;
-		.sudoku_cell {
-			@include textcenter(6em);
-			position:relative;
-			display:inline-block;
-			width:6em;
-			height:6em;
-			border:1px solid $border-color;
-			@include box-sizing(border-box);
+		.wrapper{
+			.sudoku_cell {
+				@include textcenter(6em);
+				//@extend %vertical-align;
+				position:relative;
+				display:table-cell;
+				width:6em;
+				height:6em;
+				border:1px solid $border-color;
+				@include box-sizing(border-box);
+			}
+			.cell_onclick {
+				background:#666888;
+			}
+			.border_left {
+				border-left-width:5px;
+			}
+			.border_top {
+				border-top-width:5px;
+			}
 		}
-		.border_left {
-			border-left-width:5px;
-		}
-		.border_top {
-			border-top-width:5px;
-		}
+		
 	}
 }
