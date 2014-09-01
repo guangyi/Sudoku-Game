@@ -9,7 +9,7 @@ $(document).ready(function() {
 					['.',8,'.','.','.','.',9,4,'.'],
 					['.', '.',3,'.','.',6,7,'.',8]];
 
-	function DataModule(initData) {
+	function DataModel(initData) {
 		var data = initData.map(function(arr) {
 			return arr.slice();
 		});// make a copy so it can revert
@@ -61,6 +61,9 @@ $(document).ready(function() {
 		this.updateTile = function(tile, value) {
 			tile.html(value);
 			tile.data('val', value).attr('data-val', value);
+			this.updateOptDataCount(value, -1);
+			//jQuery itself uses the .data() method to save information under the names 'events' and 'handle', 
+			//It won't change the one in html. use only data/attr cause some error in both highlight and validation
 		}
 		this.hightLightCell = function(element) {
 			this.clearHeightLight();
@@ -74,16 +77,30 @@ $(document).ready(function() {
 			}
 		}
 		this.clearView = function(row, col, element) {
-			if (element != null && element.hasClass('need_to_fill')) element.html('&nbsp').data('val', '&nbsp');
-			else if (row != null && col == null) {
-				alert(row);
-				console.log($('.need_to_fill[data-row=' + row + ']'));
-				$('.need_to_fill[data-row=' + row + ']').html('&nbsp').data('val','&nbsp');
-			}
-			else if (col != null && row == null) {
-				alert('col');
-				$('.need_to_fill[data-col=' + col + ']').html('&nbsp').data('val','&nbsp');
+			if (element != null && element.hasClass('need_to_fill')) {
+				// update number option data-count
+				var dataVal = element.data('val');
+				this.updateOptDataCount(dataVal, 1);
+				element.html('&nbsp').data('val', '&nbsp');
 			} 
+			else if (row != null || col != null) {
+				var rowOrCol = row == null ? col : row;
+				var rowOrColStr = row == null ? 'col' : 'row';
+				var tileToReset = $('.need_to_fill[data-' + rowOrColStr + '=' + rowOrCol + ']');
+				console.log(tileToReset);
+				// the result jquery returned is an ARRAY-LIKE obj!!!
+				var numberOptArr = Array.prototype.map.call(tileToReset, function(tile) {
+					return $(tile).html()
+				}).filter(function(string) {
+					return string != '&nbsp;'
+				});
+				var that = this; // keep pointing to SudokuView obj
+				numberOptArr.map(function(number) {
+					// for each tile value, update regarding number option data-count
+					that.updateOptDataCount(number, 1);
+				});
+				tileToReset.html('&nbsp').data('val','&nbsp').attr('data-val', '&nbsp');
+			}
 			this.clearHeightLight();
 			
 		}
@@ -96,9 +113,16 @@ $(document).ready(function() {
 			$('.cell_related').removeClass('cell_related');
 			$('.cell_sameVal').removeClass('cell_sameVal');
 		}
+		this.updateOptDataCount = function(number, flag) {
+			var numberOpt = $('.number h2:contains(' + number +')');
+			var dataCount = numberOpt.data('count');
+			numberOpt.data('count', dataCount + flag).attr('data-count', dataCount + flag);
+			if (dataCount + flag == 0) numberOpt.addClass('done');
+			else numberOpt.removeClass('done');
+		}
 	}
 
-	var dataModule = new DataModule(initData2);
+	var dataModule = new DataModel(initData2);
 	var sudokuView = new SudokuView();
 	
 	$('#board_wrapper').on('click', function(e) {
@@ -146,7 +170,7 @@ $(document).ready(function() {
 			console.log(row, col,'test');	
 			switch(id) {
 				case 'clearTile': 
-					sudokuView.clearView(row, col, currentTile);
+					sudokuView.clearView(null, null, currentTile);
 					dataModule.clearData(row, col);
 					break;
 				case 'clearRow' : 
