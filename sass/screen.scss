@@ -43,7 +43,7 @@ $border-color: #9EE0FF;
 			background:#fff;
 			border:1px solid $border-color;
 			&:hover {
-				background:#445566;
+				background:#9EE0FF;
 			}
 		}
 		
@@ -68,7 +68,13 @@ $border-color: #9EE0FF;
 				@include box-sizing(border-box);
 			}
 			.cell_onclick {
-				background:#666888;
+				background:#ff6666;
+			}
+			.cell_related {
+				background:#ff6600;
+			}
+			.cell_sameVal {
+				background:#ff3333;
 			}
 			.border_left {
 				border-left-width:5px;

@@ -106,7 +106,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 45, ../sass/screen.scss */
 #content #selection .number:hover {
-  background: #445566;
+  background: #9EE0FF;
 }
 /* line 51, ../sass/screen.scss */
 #content #board_wrapper {
@@ -134,13 +134,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 70, ../sass/screen.scss */
 #content #board_wrapper .wrapper .cell_onclick {
-  background: #666888;
+  background: #ff6666;
 }
 /* line 73, ../sass/screen.scss */
+#content #board_wrapper .wrapper .cell_related {
+  background: #ff6600;
+}
+/* line 76, ../sass/screen.scss */
+#content #board_wrapper .wrapper .cell_sameVal {
+  background: #ff3333;
+}
+/* line 79, ../sass/screen.scss */
 #content #board_wrapper .wrapper .border_left {
   border-left-width: 5px;
 }
-/* line 76, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 #content #board_wrapper .wrapper .border_top {
   border-top-width: 5px;
 }

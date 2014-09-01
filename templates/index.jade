@@ -12,7 +12,12 @@ html(lang="en")
 					- var n = 1
 					while n < 10
 						div.number
-							h2=n++
+							h2(data-count=9)=n++
+				aside#btnOption
+					button(class='btnOption', id='clearTile') Clear Tile
+					button(class='btnOption', id='clearRow') Clear Row
+					button(class='btnOption', id='clearCol') Clear Column
+					button(class='btnOption', id='clearAll') Clear clearAll
 				div#board_wrapper
 					- var col = 0
 					- var row = 0
@@ -23,13 +28,12 @@ html(lang="en")
 								- var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
 								- var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
 								- var string = sudokuObj[row][col] == '.'? '' : sudokuObj[row][col]
-								- var preset = string == '' ? '':'preset '
-								div(class=("sudoku_cell " + preset + borderLeft + borderTop).trim(),
-									\data-row=row, data-col=col)
+								- var preset = string == '' ? 'need_to_fill':'preset'
+								div(class=("sudoku_cell " + borderLeft + borderTop).trim())
 									if string == ''
-										h2 &nbsp
+										h2(class=preset, data-row=row, data-col=col, data-val='&nbsp') &nbsp
 									else 
-										h2=string
+										h2(class=preset, data-row=row, data-col=col, data-val=string)=string
 								- col++
 							- row++
 							- col = 0
