@@ -1,148 +1,5 @@
 $(document).ready(function() {
-	function DataModel(initData) {
-		var data = initData.map(function(arr) {
-			return arr.slice();
-		});// make a copy so it can revert
-		this.editData = function(row, col, value) {
-			if (row != null && col != null) {
-				data[row][col] = value;
-				console.log(data);
-			}
-		}
-		this.clearData = function(row, col) {
-			if (row != null && col != null) data[row][col] = initData[row][col];
-			else if (row != null) data[row] = initData[row].slice();
-			else if (col != null) {
-				for (var r = 0; r < 9; r++) {
-					data[r][col] = initData[r][col];
-				}
-			}
-		}
-		this.validSudoku = function() {
-			for (var r = 0; r < 9; r++) {
-				for (var c = 0; c < 9; c++) {
-					if (data[r][c] == '.') return false
-					temp = this.isValid(r, c);
-					if (!temp) return false 
-				}
-			}
-			return true
-		}
-		this.isValid = function(row, col) {
-			for (var r = 0; r < 9; r++) {
-				if (r != row && data[r][col] == data[row][col]) return false
-
-			}
-			for (var c = 0; c < 9; c++) {
-				if (c != col && data[row][c] == data[row][col]) return false
-			}
-			for (var r = Math.floor(row / 3) * 3; r < Math.floor(row / 3) * 3 + 3; r++) {
-				for (var c = Math.floor(col / 3) * 3; c < Math.floor(col / 3) * 3 + 3; c++) {
-					if (r != row && c != col && data[r][c] == data[row][col]) return false
-				}
-			}
-			return true
-		}
-		this.reset = function() {
-			data = initData;
-		}
-		this.getOriginData = function() {
-			return initData.map(function(arr) {
-				return arr.slice();
-			})
-		}
-		this.getCurrenData = function() {
-			return data.map(function(arr) {
-				return arr.slice();
-			})
-		}
-	}
-	function SudokuView() {
-		this.updateTile = function(tile, value) {
-			tile.html(value);
-			tile.data('val', value).attr('data-val', value);
-			this.updateOptDataCount(value, -1);
-			//jQuery itself uses the .data() method to save information under the names 'events' and 'handle', 
-			//It won't change the one in html. use only data/attr cause some error in both highlight and validation
-		}
-		this.hightLightCell = function(element) {
-			this.clearHeightLight();
-			element.addClass('cell_onclick');
-			if (element.data('val') != '&nbsp') 
-				$('.sudoku_cell').find('[data-val=' + element.data('val') + ']').addClass('cell_sameVal');
-			else {
-				$('.sudoku_cell').find('[data-row=' + element.data('row') + ']').addClass('cell_related');
-				$('.sudoku_cell').find('[data-col=' + element.data('col') + ']').addClass('cell_related');
-				element.removeClass('cell_related');
-			}
-		}
-		this.clearView = function(row, col, element) {
-			if (element != null && element.hasClass('need_to_fill')) {
-				// update number option data-count
-				var dataVal = element.data('val');
-				this.updateOptDataCount(dataVal, 1);
-				element.html('&nbsp').data('val', '&nbsp');
-			} 
-			else if (row != null || col != null) {
-				var rowOrCol = row == null ? col : row;
-				var rowOrColStr = row == null ? 'col' : 'row';
-				var tileToReset = $('.need_to_fill[data-' + rowOrColStr + '=' + rowOrCol + ']');
-				console.log(tileToReset);
-				// the result jquery returned is an ARRAY-LIKE obj!!!
-				var numberOptArr = Array.prototype.map.call(tileToReset, function(tile) {
-					return $(tile).html()
-				}).filter(function(string) {
-					return string != '&nbsp;'
-				});
-				var that = this; // keep pointing to SudokuView obj
-				numberOptArr.map(function(number) {
-					// for each tile value, update regarding number option data-count
-					that.updateOptDataCount(number, 1);
-				});
-				tileToReset.html('&nbsp').data('val','&nbsp').attr('data-val', '&nbsp');
-			}
-			this.clearHeightLight();
-		}
-		this.clearAllView = function() {
-			$('.need_to_fill').html('&nbsp').data('val','&nbsp');
-			this.clearHeightLight();
-		}
-		this.clearHeightLight = function() {
-			$('.cell_onclick').removeClass('cell_onclick');
-			$('.cell_related').removeClass('cell_related');
-			$('.cell_sameVal').removeClass('cell_sameVal');
-		}
-		this.updateOptDataCount = function(number, flag) {
-			var numberOpt = $('.number h2:contains(' + number +')');
-			var dataCount = numberOpt.data('count');
-			numberOpt.data('count', dataCount + flag).attr('data-count', dataCount + flag);
-			if (dataCount + flag == 0) numberOpt.addClass('done');
-			else numberOpt.removeClass('done');
-		}
-		this.initView = function (data){
-			var elemIndex = 0;
-			var allTiles = $('.sudoku_cell');
-			console.log($('.number h2'));
-			$('.number h2').data('count', 9).attr('data-count', 9);
-			for (var row = 0; row < 9; row++) {
-				for (var col = 0; col < 9; col++) {
-					var value = data[row][col];
-					var className;
-					if (typeof value == 'number') {
-						className = 'preset';
-						this.updateOptDataCount(data[row][col], -1);
-					}
-					else {
-						className = 'need_to_fill';
-						value = '&nbsp'
-					}
-					$(allTiles[elemIndex]).children('h2').addClass(className).html(value).data('val', value).attr('data-val', value);
-					elemIndex++; 
-				}
-			}
-		}
-	}
-	var initData2 = [[6,'.',2,'.','.','.','.','.',7],
+	var initdata2 = [[6,'.',2,'.','.','.','.','.',7],
 					[8,9,'.',2,'.','.','.',6,'.'],
 					['.',5,4,'.',6,'.',8,'.',2],
 					['.',7,'.',6, '.',5,4,'.','.'],
@@ -151,68 +8,68 @@ $(document).ready(function() {
 					['.',4,'.','.',7,'.','.',5,3],
 					['.',8,'.','.','.','.',9,4,'.'],
 					['.', '.',3,'.','.',6,7,'.',8]];
-	var dataModule = new DataModel(initData2);
-	var sudokuView = new SudokuView();
-	sudokuView.initView(initData2);
+	var sudokudatamodel = new sudokudatamodel(initdata2);
+	var sudokuview = new sudokuview();
+	sudokuview.initview(initdata2);
 
 	$('#board_wrapper').on('click', function(e) {
-		var currentTile = $(e.target);
-		if (currentTile.length > 0) {
-			sudokuView.hightLightCell(currentTile);
+		var currenttile = $(e.target);
+		if (currenttile.length > 0) {
+			sudokuview.hightlightcell(currenttile);
 		}
 	});
 	$('#selection').on('click', function(e) {
 		// e.target is number h2
-		var currentTile = $('.cell_onclick');// h2.cell_onclick
-		console.log(e.target.nodeName);
-		if (e.target && e.target.className == 'selectable_number') {
-			if (currentTile.length > 0 && currentTile.hasClass('need_to_fill')) {
-				var newValue = $(e.target).html();
-				var curValue = currentTile.html();
-				var row = currentTile.data('row');
-				var col = currentTile.data('col');
+		var currenttile = $('.cell_onclick');// h2.cell_onclick
+		console.log(e.target.nodename);
+		if (e.target && e.target.classname == 'selectable_number') {
+			if (currenttile.length > 0 && currenttile.hasclass('need_to_fill')) {
+				var newvalue = $(e.target).html();
+				var curvalue = currenttile.html();
+				var row = currenttile.data('row');
+				var col = currenttile.data('col');
 				// edit data to test if this number is valid in data
-				dataModule.editData(row, col, newValue);
-				var valid = dataModule.isValid(row, col);
-				console.log(newValue, valid);
+				sudokudatamodel.editdata(row, col, newvalue);
+				var valid = sudokudatamodel.isvalid(row, col);
+				console.log(newvalue, valid);
 				if (valid) {
-					sudokuView.updateTile(currentTile, newValue);
-					if (dataModule.validSudoku()) alert("congratulations");
+					sudokuview.updatetile(currenttile, newvalue);
+					if (sudokudatamodel.validsudoku()) alert("congratulations");
 				}
-				else dataModule.editData(row, col, curValue);
+				else sudokudatamodel.editdata(row, col, curvalue);
 			}
 		}
-		sudokuView.clearHeightLight();
+		sudokuview.clearheightlight();
 	});
 
-	$('.btnOption').on('click', function() {
+	$('.btnoption').on('click', function(
 		var id = $(this).attr('id');
-		var currentTile = $('.cell_onclick');
-		if (id == 'clearAll') {
-			var initData = dataModule.getOriginData();
-			console.log(initData);
-			sudokuView.initView(initData);
-			dataModule.reset();
+		var currenttile = $('.cell_onclick');
+		if (id == 'clearall') {
+			var initdata = sudokudatamodel.getorigindata();
+			console.log(initdata);
+			sudokuview.initview(initdata);
+			sudokudatamodel.reset();
 		} 
-		else if (currentTile.length == 0 ){
-			alert("Select a tile to clear");
+		else if (currenttile.length == 0 ){
+			alert("select a tile to clear");
 		}
 		else {
-			var row = currentTile.data('row');
-			var col = currentTile.data('col');
+			var row = currenttile.data('row');
+			var col = currenttile.data('col');
 			console.log(row, col,'test');	
 			switch(id) {
-				case 'clearTile': 
-					sudokuView.clearView(null, null, currentTile);
-					dataModule.clearData(row, col);
+				case 'cleartile': 
+					sudokuview.clearview(null, null, currenttile);
+					sudokudatamodel.cleardata(row, col);
 					break;
-				case 'clearRow' : 
-					sudokuView.clearView(row, null, null);
-					dataModule.clearData(row, null);
+				case 'clearrow' : 
+					sudokuview.clearview(row, null, null);
+					sudokudatamodel.cleardata(row, null);
 					break;
-				case 'clearCol' : 
-					sudokuView.clearView(null, col, null);
-					dataModule.editData(null, col);
+				case 'clearcol' : 
+					sudokuview.clearview(null, col, null);
+					sudokudatamodel.editdata(null, col);
 					break;
 			}
 		}
