@@ -7,27 +7,25 @@ $(document).ready(function() {
 		var data = initData.map(function(arr) {
 			return arr.slice();
 		});// make a copy so it can revert
-		
 		this.editData = function(row, col, value) {
 			if (row && col) {
 				data[row][col] = value;
-				console.log(initData);
+				console.log(data);
 			}
-			else if (row) {
-				for (var c = 0; c < 9; c++) {
-					data[row][col] = value;
-				}
-			}
+		}
+		this.clearData = function(row, col) {
+			if (row && col) data[row][col] = initData[row][col];
+			else if (row) data[row] = initData[row].slice();
 			else if (col) {
 				for (var r = 0; r < 9; r++) {
-					data[r][col] = value;
+					data[r][col] = initData[r][col];
 				}
 			}
 		}
 		this.validSudoku = function() {
 			for (var r = 0; r < 9; r++) {
 				for (var c = 0; c < 9; c++) {
-					if (data[r][c] == '&nbsp') return false
+					if (data[r][c] == '.') return false
 					temp = this.isValid(r, c);
 					if (!temp) return false 
 				}
@@ -133,13 +131,13 @@ $(document).ready(function() {
 			switch(id) {
 				case 'clearTile': 
 					sudokuView.clearView(row, col, currentTile);
-					dataModule.editData(row, col, '&nbsp');
+					dataModule.clearData(row, col);
 				case 'clearRow' : 
 					sudokuView.clearView(row, null, null);
-					dataModule.editData(row, null, '&nbsp');
+					dataModule.clearData(row, null);
 				case 'clearCol' : 
 					sudokuView.clearView(null, col, null);
-					dataModule.editData(null, col, '&nbsp');
+					dataModule.editData(null, col);
 			}
 		}
 	});
