@@ -1,14 +1,4 @@
 $(document).ready(function() {
-	var initData2 = [[6,'.',2,'.','.','.','.','.',7],
-					[8,9,'.',2,'.','.','.',6,'.'],
-					['.',5,4,'.',6,'.',8,'.',2],
-					['.',7,'.',6, '.',5,4,'.','.'],
-					[4,'.','.',3,'.',9, '.','.',6],
-					[9,6,'.','.','.','.',2,'.',5],
-					['.',4,'.','.',7,'.','.',5,3],
-					['.',8,'.','.','.','.',9,4,'.'],
-					['.', '.',3,'.','.',6,7,'.',8]];
-
 	function DataModel(initData) {
 		var data = initData.map(function(arr) {
 			return arr.slice();
@@ -56,6 +46,16 @@ $(document).ready(function() {
 		this.reset = function() {
 			data = initData;
 		}
+		this.getOriginData = function() {
+			return initData.map(function(arr) {
+				return arr.slice();
+			})
+		}
+		this.getCurrenData = function() {
+			return data.map(function(arr) {
+				return arr.slice();
+			})
+		}
 	}
 	function SudokuView() {
 		this.updateTile = function(tile, value) {
@@ -102,7 +102,6 @@ $(document).ready(function() {
 				tileToReset.html('&nbsp').data('val','&nbsp').attr('data-val', '&nbsp');
 			}
 			this.clearHeightLight();
-			
 		}
 		this.clearAllView = function() {
 			$('.need_to_fill').html('&nbsp').data('val','&nbsp');
@@ -120,11 +119,42 @@ $(document).ready(function() {
 			if (dataCount + flag == 0) numberOpt.addClass('done');
 			else numberOpt.removeClass('done');
 		}
+		this.initView = function (data){
+			var elemIndex = 0;
+			var allTiles = $('.sudoku_cell');
+			console.log($('.number h2'));
+			$('.number h2').data('count', 9).attr('data-count', 9);
+			for (var row = 0; row < 9; row++) {
+				for (var col = 0; col < 9; col++) {
+					var value = data[row][col];
+					var className;
+					if (typeof value == 'number') {
+						className = 'preset';
+						this.updateOptDataCount(data[row][col], -1);
+					}
+					else {
+						className = 'need_to_fill';
+						value = '&nbsp'
+					}
+					$(allTiles[elemIndex]).children('h2').addClass(className).html(value).data('val', value).attr('data-val', value);
+					elemIndex++; 
+				}
+			}
+		}
 	}
-
+	var initData2 = [[6,'.',2,'.','.','.','.','.',7],
+					[8,9,'.',2,'.','.','.',6,'.'],
+					['.',5,4,'.',6,'.',8,'.',2],
+					['.',7,'.',6, '.',5,4,'.','.'],
+					[4,'.','.',3,'.',9, '.','.',6],
+					[9,6,'.','.','.','.',2,'.',5],
+					['.',4,'.','.',7,'.','.',5,3],
+					['.',8,'.','.','.','.',9,4,'.'],
+					['.', '.',3,'.','.',6,7,'.',8]];
 	var dataModule = new DataModel(initData2);
 	var sudokuView = new SudokuView();
-	
+	sudokuView.initView(initData2);
+
 	$('#board_wrapper').on('click', function(e) {
 		var currentTile = $(e.target);
 		if (currentTile.length > 0) {
@@ -134,7 +164,8 @@ $(document).ready(function() {
 	$('#selection').on('click', function(e) {
 		// e.target is number h2
 		var currentTile = $('.cell_onclick');// h2.cell_onclick
-		if (e.target) {
+		console.log(e.target.nodeName);
+		if (e.target && e.target.className == 'selectable_number') {
 			if (currentTile.length > 0 && currentTile.hasClass('need_to_fill')) {
 				var newValue = $(e.target).html();
 				var curValue = currentTile.html();
@@ -158,8 +189,10 @@ $(document).ready(function() {
 		var id = $(this).attr('id');
 		var currentTile = $('.cell_onclick');
 		if (id == 'clearAll') {
-			sudokuView.clearAllView();
-			dataModule.reset(); 
+			var initData = dataModule.getOriginData();
+			console.log(initData);
+			sudokuView.initView(initData);
+			dataModule.reset();
 		} 
 		else if (currentTile.length == 0 ){
 			alert("Select a tile to clear");

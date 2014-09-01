@@ -49,7 +49,9 @@ $border-color: #9EE0FF;
 				background:#9EE0FF;
 			}
 		}
-		
+		.done {
+			background:#000;
+		}
 	}
 	#board_wrapper{
 		background:#FFF;
@@ -67,6 +69,9 @@ $border-color: #9EE0FF;
 					height:100%;
 					font-size:4em;
 				}
+				& .preset {
+					background:#DDD;
+				}
 				border:1px solid $border-color;
 				@include box-sizing(border-box);
 			}
@@ -74,10 +79,10 @@ $border-color: #9EE0FF;
 				background:#ff6666;
 			}
 			.cell_related {
-				background:#ff6600;
+				background:#FFAD00;
 			}
 			.cell_sameVal {
-				background:#ff3333;
+				background:#ff9999;
 			}
 			.border_left {
 				border-left-width:5px;

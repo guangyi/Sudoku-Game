@@ -12,28 +12,24 @@ html(lang="en")
 					- var n = 1
 					while n < 10
 						div.number
-							h2(data-count=9)=n++
-				aside#btnOption
-					button(class='btnOption', id='clearTile') Clear Tile
-					button(class='btnOption', id='clearRow') Clear Row
-					button(class='btnOption', id='clearCol') Clear Column
-					button(class='btnOption', id='clearAll') Clear clearAll
+							h2(class="selectable_number")=n++
+				
 				div#board_wrapper
 					- var col = 0
 					- var row = 0
-					- var sudokuObj = [[6,'.',2,'.','.','.','.','.',7],[8,9,'.',2,'.','.','.',6,'.'],['.',5,4,'.',6,'.',8,'.',2],['.',7,'.',6, '.',5,4,'.','.'],[4,'.','.',3,'.',9, '.','.',6],[9,6,'.','.','.','.',2,'.',5],['.',4,'.','.',7,'.','.',5,3],['.',8,'.','.','.','.',9,4,'.'],['.', '.',3,'.','.',6,7,'.',8]];
+					//- var sudokuObj = [[6,'.',2,'.','.','.','.','.',7],[8,9,'.',2,'.','.','.',6,'.'],['.',5,4,'.',6,'.',8,'.',2],['.',7,'.',6, '.',5,4,'.','.'],[4,'.','.',3,'.',9, '.','.',6],[9,6,'.','.','.','.',2,'.',5],['.',4,'.','.',7,'.','.',5,3],['.',8,'.','.','.','.',9,4,'.'],['.', '.',3,'.','.',6,7,'.',8]];
 					while row < 9
 						div.wrapper(display="table", width="100%", top=row * 90 + 'px')
 							while col < 9
 								- var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
 								- var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
-								- var string = sudokuObj[row][col] == '.'? '' : sudokuObj[row][col]
-								- var preset = string == '' ? 'need_to_fill':'preset'
 								div(class=("sudoku_cell " + borderLeft + borderTop).trim())
-									if string == ''
-										h2(class=preset, data-row=row, data-col=col, data-val='&nbsp') &nbsp
-									else 
-										h2(class=preset, data-row=row, data-col=col, data-val=string)=string
-								- col++
+									h2(data-row=row, data-col=col, data-val='&nbsp') &nbsp
+									- col++
 							- row++
 							- col = 0
+				aside#btnOption
+					button(class='btnOption', id='clearTile') Clear Tile
+					button(class='btnOption', id='clearRow') Clear Row
+					button(class='btnOption', id='clearCol') Clear Column
+					button(class='btnOption', id='clearAll') Clear clearAll

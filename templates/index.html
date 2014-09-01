@@ -11,31 +11,294 @@
       <main id="content">
         <div id="selection">
           <div class="number">
-            <h2 data-count='9'>1</h2>
+            <h2 class="selectable_number">1</h2>
           </div>
           <div class="number">
-            <h2 data-count='9'>2</h2>
+            <h2 class="selectable_number">2</h2>
           </div>
           <div class="number">
-            <h2 data-count='9'>3</h2>
+            <h2 class="selectable_number">3</h2>
           </div>
           <div class="number">
-            <h2 data-count='9'>4</h2>
+            <h2 class="selectable_number">4</h2>
           </div>
           <div class="number">
-            <h2 data-count='9'>5</h2>
+            <h2 class="selectable_number">5</h2>
           </div>
           <div class="number">
-            <h2 data-count='9'>6</h2>
+            <h2 class="selectable_number">6</h2>
           </div>
           <div class="number">
-            <h2 data-count='9'>7</h2>
+            <h2 class="selectable_number">7</h2>
           </div>
           <div class="number">
-            <h2 data-count='9'>8</h2>
+            <h2 class="selectable_number">8</h2>
           </div>
           <div class="number">
-            <h2 data-count='9'>9</h2>
+            <h2 class="selectable_number">9</h2>
+          </div>
+        </div>
+        <div id="board_wrapper">
+          <div display="table" width="100%" top="0px" class="wrapper">
+            <div class="sudoku_cell">
+              <h2 data-row='0' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='0' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='0' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='0' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='0' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='0' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='0' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='0' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='0' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+          </div>
+          <div display="table" width="100%" top="90px" class="wrapper">
+            <div class="sudoku_cell">
+              <h2 data-row='1' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='1' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='1' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='1' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='1' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='1' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='1' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='1' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='1' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+          </div>
+          <div display="table" width="100%" top="180px" class="wrapper">
+            <div class="sudoku_cell">
+              <h2 data-row='2' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='2' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='2' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='2' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='2' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='2' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='2' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='2' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='2' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+          </div>
+          <div display="table" width="100%" top="270px" class="wrapper">
+            <div class="sudoku_cell border_top">
+              <h2 data-row='3' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='3' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='3' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left border_top">
+              <h2 data-row='3' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='3' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='3' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left border_top">
+              <h2 data-row='3' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='3' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='3' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+          </div>
+          <div display="table" width="100%" top="360px" class="wrapper">
+            <div class="sudoku_cell">
+              <h2 data-row='4' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='4' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='4' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='4' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='4' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='4' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='4' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='4' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='4' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+          </div>
+          <div display="table" width="100%" top="450px" class="wrapper">
+            <div class="sudoku_cell">
+              <h2 data-row='5' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='5' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='5' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='5' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='5' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='5' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='5' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='5' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='5' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+          </div>
+          <div display="table" width="100%" top="540px" class="wrapper">
+            <div class="sudoku_cell border_top">
+              <h2 data-row='6' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='6' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='6' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left border_top">
+              <h2 data-row='6' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='6' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='6' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left border_top">
+              <h2 data-row='6' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='6' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_top">
+              <h2 data-row='6' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+          </div>
+          <div display="table" width="100%" top="630px" class="wrapper">
+            <div class="sudoku_cell">
+              <h2 data-row='7' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='7' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='7' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='7' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='7' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='7' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='7' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='7' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='7' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+          </div>
+          <div display="table" width="100%" top="720px" class="wrapper">
+            <div class="sudoku_cell">
+              <h2 data-row='8' data-col='0' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='8' data-col='1' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='8' data-col='2' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='8' data-col='3' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='8' data-col='4' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='8' data-col='5' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell border_left">
+              <h2 data-row='8' data-col='6' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='8' data-col='7' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
+            <div class="sudoku_cell">
+              <h2 data-row='8' data-col='8' data-val="&amp;nbsp">&nbsp</h2>
+            </div>
           </div>
         </div>
         <aside id="btnOption">
@@ -44,269 +307,6 @@
           <button id="clearCol" class="btnOption">Clear Column</button>
           <button id="clearAll" class="btnOption">Clear clearAll</button>
         </aside>
-        <div id="board_wrapper">
-          <div display="table" width="100%" top="0px" class="wrapper">
-            <div class="sudoku_cell">
-              <h2 data-row='0' data-col='0' data-val='6' class="preset">6</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='0' data-col='1' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='0' data-col='2' data-val='2' class="preset">2</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='0' data-col='3' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='0' data-col='4' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='0' data-col='5' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='0' data-col='6' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='0' data-col='7' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='0' data-col='8' data-val='7' class="preset">7</h2>
-            </div>
-          </div>
-          <div display="table" width="100%" top="90px" class="wrapper">
-            <div class="sudoku_cell">
-              <h2 data-row='1' data-col='0' data-val='8' class="preset">8</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='1' data-col='1' data-val='9' class="preset">9</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='1' data-col='2' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='1' data-col='3' data-val='2' class="preset">2</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='1' data-col='4' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='1' data-col='5' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='1' data-col='6' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='1' data-col='7' data-val='6' class="preset">6</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='1' data-col='8' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-          </div>
-          <div display="table" width="100%" top="180px" class="wrapper">
-            <div class="sudoku_cell">
-              <h2 data-row='2' data-col='0' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='2' data-col='1' data-val='5' class="preset">5</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='2' data-col='2' data-val='4' class="preset">4</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='2' data-col='3' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='2' data-col='4' data-val='6' class="preset">6</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='2' data-col='5' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='2' data-col='6' data-val='8' class="preset">8</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='2' data-col='7' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='2' data-col='8' data-val='2' class="preset">2</h2>
-            </div>
-          </div>
-          <div display="table" width="100%" top="270px" class="wrapper">
-            <div class="sudoku_cell border_top">
-              <h2 data-row='3' data-col='0' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='3' data-col='1' data-val='7' class="preset">7</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='3' data-col='2' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left border_top">
-              <h2 data-row='3' data-col='3' data-val='6' class="preset">6</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='3' data-col='4' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='3' data-col='5' data-val='5' class="preset">5</h2>
-            </div>
-            <div class="sudoku_cell border_left border_top">
-              <h2 data-row='3' data-col='6' data-val='4' class="preset">4</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='3' data-col='7' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='3' data-col='8' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-          </div>
-          <div display="table" width="100%" top="360px" class="wrapper">
-            <div class="sudoku_cell">
-              <h2 data-row='4' data-col='0' data-val='4' class="preset">4</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='4' data-col='1' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='4' data-col='2' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='4' data-col='3' data-val='3' class="preset">3</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='4' data-col='4' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='4' data-col='5' data-val='9' class="preset">9</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='4' data-col='6' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='4' data-col='7' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='4' data-col='8' data-val='6' class="preset">6</h2>
-            </div>
-          </div>
-          <div display="table" width="100%" top="450px" class="wrapper">
-            <div class="sudoku_cell">
-              <h2 data-row='5' data-col='0' data-val='9' class="preset">9</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='5' data-col='1' data-val='6' class="preset">6</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='5' data-col='2' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='5' data-col='3' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='5' data-col='4' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='5' data-col='5' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='5' data-col='6' data-val='2' class="preset">2</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='5' data-col='7' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='5' data-col='8' data-val='5' class="preset">5</h2>
-            </div>
-          </div>
-          <div display="table" width="100%" top="540px" class="wrapper">
-            <div class="sudoku_cell border_top">
-              <h2 data-row='6' data-col='0' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='6' data-col='1' data-val='4' class="preset">4</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='6' data-col='2' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left border_top">
-              <h2 data-row='6' data-col='3' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='6' data-col='4' data-val='7' class="preset">7</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='6' data-col='5' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left border_top">
-              <h2 data-row='6' data-col='6' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='6' data-col='7' data-val='5' class="preset">5</h2>
-            </div>
-            <div class="sudoku_cell border_top">
-              <h2 data-row='6' data-col='8' data-val='3' class="preset">3</h2>
-            </div>
-          </div>
-          <div display="table" width="100%" top="630px" class="wrapper">
-            <div class="sudoku_cell">
-              <h2 data-row='7' data-col='0' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='7' data-col='1' data-val='8' class="preset">8</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='7' data-col='2' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='7' data-col='3' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='7' data-col='4' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='7' data-col='5' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='7' data-col='6' data-val='9' class="preset">9</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='7' data-col='7' data-val='4' class="preset">4</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='7' data-col='8' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-          </div>
-          <div display="table" width="100%" top="720px" class="wrapper">
-            <div class="sudoku_cell">
-              <h2 data-row='8' data-col='0' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='8' data-col='1' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='8' data-col='2' data-val='3' class="preset">3</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='8' data-col='3' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='8' data-col='4' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='8' data-col='5' data-val='6' class="preset">6</h2>
-            </div>
-            <div class="sudoku_cell border_left">
-              <h2 data-row='8' data-col='6' data-val='7' class="preset">7</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='8' data-col='7' data-val="&amp;nbsp" class="need_to_fill">&nbsp</h2>
-            </div>
-            <div class="sudoku_cell">
-              <h2 data-row='8' data-col='8' data-val='8' class="preset">8</h2>
-            </div>
-          </div>
-        </div>
       </main>
     </div>
   </body>
