@@ -42,6 +42,9 @@ $border-color: #9EE0FF;
 			margin-left: 0.5em;
 			background:#fff;
 			border:1px solid $border-color;
+			& h2 {
+				font-size:4em;
+			}
 			&:hover {
 				background:#9EE0FF;
 			}
@@ -62,7 +65,7 @@ $border-color: #9EE0FF;
 				height:6em;
 				& h2 {
 					height:100%;
-					font-size:1.5em;
+					font-size:4em;
 				}
 				border:1px solid $border-color;
 				@include box-sizing(border-box);

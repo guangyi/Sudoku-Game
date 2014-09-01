@@ -1,22 +1,28 @@
 $(document).ready(function() {
-	var initData2 = [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],
-	['.', '.', '.', '.', '.' ,'.', '.' ,'.', '.'],[1,2,3,4,5,6,7,8,9],
-	[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],['.', '.', '.', '.', '.' ,'.', '.' ,'.', '.']];
+	var initData2 = [[6,'.',2,'.','.','.','.','.',7],
+					[8,9,'.',2,'.','.','.',6,'.'],
+					['.',5,4,'.',6,'.',8,'.',2],
+					['.',7,'.',6, '.',5,4,'.','.'],
+					[4,'.','.',3,'.',9, '.','.',6],
+					[9,6,'.','.','.','.',2,'.',5],
+					['.',4,'.','.',7,'.','.',5,3],
+					['.',8,'.','.','.','.',9,4,'.'],
+					['.', '.',3,'.','.',6,7,'.',8]];
 
 	function DataModule(initData) {
 		var data = initData.map(function(arr) {
 			return arr.slice();
 		});// make a copy so it can revert
 		this.editData = function(row, col, value) {
-			if (row && col) {
+			if (row != null && col != null) {
 				data[row][col] = value;
 				console.log(data);
 			}
 		}
 		this.clearData = function(row, col) {
-			if (row && col) data[row][col] = initData[row][col];
-			else if (row) data[row] = initData[row].slice();
-			else if (col) {
+			if (row != null && col != null) data[row][col] = initData[row][col];
+			else if (row != null) data[row] = initData[row].slice();
+			else if (col != null) {
 				for (var r = 0; r < 9; r++) {
 					data[r][col] = initData[r][col];
 				}
@@ -35,6 +41,7 @@ $(document).ready(function() {
 		this.isValid = function(row, col) {
 			for (var r = 0; r < 9; r++) {
 				if (r != row && data[r][col] == data[row][col]) return false
+
 			}
 			for (var c = 0; c < 9; c++) {
 				if (c != col && data[row][c] == data[row][col]) return false
@@ -53,7 +60,7 @@ $(document).ready(function() {
 	function SudokuView() {
 		this.updateTile = function(tile, value) {
 			tile.html(value);
-			tile.data('val', value);
+			tile.data('val', value).attr('data-val', value);
 		}
 		this.hightLightCell = function(element) {
 			this.clearHeightLight();
@@ -67,10 +74,18 @@ $(document).ready(function() {
 			}
 		}
 		this.clearView = function(row, col, element) {
-			if (element) element.html('&nbsp');
-			else if (row) $('.need_to_fill[data-row=' + row + ']').html('&nbsp').data('val','&nbsp');
-			else if (col) $('.need_to_fill[data-col=' + col + ']').html('&nbsp').data('val','&nbsp');
+			if (element != null && element.hasClass('need_to_fill')) element.html('&nbsp').data('val', '&nbsp');
+			else if (row != null && col == null) {
+				alert(row);
+				console.log($('.need_to_fill[data-row=' + row + ']'));
+				$('.need_to_fill[data-row=' + row + ']').html('&nbsp').data('val','&nbsp');
+			}
+			else if (col != null && row == null) {
+				alert('col');
+				$('.need_to_fill[data-col=' + col + ']').html('&nbsp').data('val','&nbsp');
+			} 
 			this.clearHeightLight();
+			
 		}
 		this.clearAllView = function() {
 			$('.need_to_fill').html('&nbsp').data('val','&nbsp');
@@ -104,6 +119,7 @@ $(document).ready(function() {
 				// edit data to test if this number is valid in data
 				dataModule.editData(row, col, newValue);
 				var valid = dataModule.isValid(row, col);
+				console.log(newValue, valid);
 				if (valid) {
 					sudokuView.updateTile(currentTile, newValue);
 					if (dataModule.validSudoku()) alert("congratulations");
@@ -132,12 +148,15 @@ $(document).ready(function() {
 				case 'clearTile': 
 					sudokuView.clearView(row, col, currentTile);
 					dataModule.clearData(row, col);
+					break;
 				case 'clearRow' : 
 					sudokuView.clearView(row, null, null);
 					dataModule.clearData(row, null);
+					break;
 				case 'clearCol' : 
 					sudokuView.clearView(null, col, null);
 					dataModule.editData(null, col);
+					break;
 			}
 		}
 	});
