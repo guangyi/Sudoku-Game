@@ -140,21 +140,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 100%;
   font-size: 4em;
 }
-/* line 72, ../sass/screen.scss */
-#content #board_wrapper .wrapper .sudoku_cell .preset {
-  background: #DDD;
+/* line 75, ../sass/screen.scss */
+#content #board_wrapper .wrapper .cell_onclick {
+  background: #FFDDDD;
 }
 /* line 78, ../sass/screen.scss */
-#content #board_wrapper .wrapper .cell_onclick {
-  background: #ff6666;
+#content #board_wrapper .wrapper .cell_related {
+  background: #FFDDDD;
 }
 /* line 81, ../sass/screen.scss */
-#content #board_wrapper .wrapper .cell_related {
-  background: #FFAD00;
+#content #board_wrapper .wrapper .preset {
+  background: #DDD;
 }
 /* line 84, ../sass/screen.scss */
 #content #board_wrapper .wrapper .cell_sameVal {
-  background: #ff9999;
+  background: #ffdddd !important;
 }
 /* line 87, ../sass/screen.scss */
 #content #board_wrapper .wrapper .border_left {

@@ -69,20 +69,20 @@ $border-color: #9EE0FF;
 					height:100%;
 					font-size:4em;
 				}
-				& .preset {
-					background:#DDD;
-				}
 				border:1px solid $border-color;
 				@include box-sizing(border-box);
 			}
 			.cell_onclick {
-				background:#ff6666;
+				background:#FFDDDD;
 			}
 			.cell_related {
-				background:#FFAD00;
+				background:#FFDDDD;
+			}
+			.preset {
+				background:#DDD;
 			}
 			.cell_sameVal {
-				background:#ff9999;
+				background:#FFDDDD!important;
 			}
 			.border_left {
 				border-left-width:5px;
