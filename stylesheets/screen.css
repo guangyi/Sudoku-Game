@@ -114,7 +114,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 52, ../sass/screen.scss */
 #content #selection .done {
-  background: #000;
+  display: none;
 }
 /* line 56, ../sass/screen.scss */
 #content #board_wrapper {
