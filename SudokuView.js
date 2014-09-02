@@ -7,15 +7,22 @@ function SudokuView() {
         //It won't change the one in html. use only data/attr cause some error in both highlight and validation
     }
     this.highlightTile = function(element) {
-        this.clearHighLight();
+        this.clearHighLightAll();
         element.addClass('cell_onclick');
         if (element.data('val') != '&nbsp;') 
-            $('.sudoku_tile').find('[data-val=' + element.data('val') + ']').addClass('cell_sameVal');
+            this.highlightSameVal(element);
         else {
             $('.sudoku_tile').find('[data-row=' + element.data('row') + ']').addClass('cell_related');
             $('.sudoku_tile').find('[data-col=' + element.data('col') + ']').addClass('cell_related');
             element.removeClass('cell_related');
         }
+    }
+    this.highlightSameVal = function(element) {
+        $('.sudoku_tile').find('[data-val=' + element.data('val') + ']').addClass('cell_sameVal');
+    }
+    this.highlightWrong = function(element) {
+        var back = $('.cell_related').css('background-color');
+        $('.cell_related').addClass('wrong');
     }
     this.clearView = function(row, col, element) {
         if (element != null && element.hasClass('need_to_fill')) {
@@ -47,15 +54,17 @@ function SudokuView() {
 
     this.clearAllView = function() {
         $('.need_to_fill').html('&nbsp;').data('val','&nbsp;');
-        this.clearHeightLight();
+        this.clearHighLightAll();
     }
 
-    this.clearHighLight = function() {
+    this.clearHighLightAll = function() {
         $('.cell_onclick').removeClass('cell_onclick');
         $('.cell_related').removeClass('cell_related');
         $('.cell_sameVal').removeClass('cell_sameVal');
     }
-
+    this.clearHighLightRelated = function() {
+        $('.cell_related').removeClass('cell_related');
+    }
     this.updateOptDataCount = function(number, flag) {
         var numberOpt = $('.number h2:contains(' + number +')');
         var dataCount = numberOpt.data('count');
@@ -86,4 +95,5 @@ function SudokuView() {
             }
         }
     }
+    
 }

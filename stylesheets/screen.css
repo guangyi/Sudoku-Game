@@ -159,29 +159,42 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: #FFDDDD;
 }
 /* line 91, ../sass/screen.scss */
+#content #board_wrapper .wrapper .wrong {
+  background: #FF0000;
+  -webkit-transform: background;
+  -moz-transform: background;
+  -ms-transform: background;
+  -o-transform: background;
+  transform: background;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+}
+/* line 96, ../sass/screen.scss */
 #content #board_wrapper .wrapper .preset {
   background: #DDD;
 }
-/* line 94, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 #content #board_wrapper .wrapper .cell_sameVal {
   background: #ffdddd !important;
 }
-/* line 97, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 #content #board_wrapper .wrapper .border_left {
   border-left-width: 4px;
 }
-/* line 100, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 #content #board_wrapper .wrapper .border_top {
   border-top-width: 4px;
 }
-/* line 105, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 #content #btnOption {
   width: 42vw;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 110, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 #content #btnOption .btnOption {
   width: 8vw;
   height: 3vw;
@@ -191,45 +204,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @media all and (max-width: 53.5em) {
-  /* line 123, ../sass/screen.scss */
+  /* line 128, ../sass/screen.scss */
   #content {
     width: 73vw;
   }
-  /* line 125, ../sass/screen.scss */
+  /* line 130, ../sass/screen.scss */
   #content #selection {
     width: 68vw;
   }
-  /* line 127, ../sass/screen.scss */
+  /* line 132, ../sass/screen.scss */
   #content #selection .number {
     width: 6vw;
     height: 6vw;
     text-align: center;
     line-height: 6vw;
   }
-  /* line 133, ../sass/screen.scss */
+  /* line 138, ../sass/screen.scss */
   #content #board_wrapper {
     width: 72vw;
   }
-  /* line 136, ../sass/screen.scss */
+  /* line 141, ../sass/screen.scss */
   #content #board_wrapper .wrapper .sudoku_tile {
     width: 8vw;
     height: 8vw;
     text-align: center;
     line-height: 8vw;
   }
-  /* line 141, ../sass/screen.scss */
+  /* line 146, ../sass/screen.scss */
   #content #board_wrapper .wrapper .border_left {
     border-left-width: 3px;
   }
-  /* line 144, ../sass/screen.scss */
+  /* line 149, ../sass/screen.scss */
   #content #board_wrapper .wrapper .border_top {
     border-top-width: 3px;
   }
-  /* line 149, ../sass/screen.scss */
+  /* line 154, ../sass/screen.scss */
   #content #btnOption {
     width: 60vw;
   }
-  /* line 151, ../sass/screen.scss */
+  /* line 156, ../sass/screen.scss */
   #content #btnOption .btnOption {
     width: 12vw;
     height: 4vw;
@@ -237,45 +250,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 @media all and (max-width: 35em) {
-  /* line 162, ../sass/screen.scss */
+  /* line 167, ../sass/screen.scss */
   #content {
     width: 73vw;
   }
-  /* line 164, ../sass/screen.scss */
+  /* line 169, ../sass/screen.scss */
   #content #selection {
     width: 70vw;
   }
-  /* line 166, ../sass/screen.scss */
+  /* line 171, ../sass/screen.scss */
   #content #selection .number {
     width: 6vw;
     height: 6vw;
     text-align: center;
     line-height: 6vw;
   }
-  /* line 172, ../sass/screen.scss */
+  /* line 177, ../sass/screen.scss */
   #content #board_wrapper {
     width: 72vw;
   }
-  /* line 175, ../sass/screen.scss */
+  /* line 180, ../sass/screen.scss */
   #content #board_wrapper .wrapper .sudoku_tile {
     width: 8vw;
     height: 8vw;
     text-align: center;
     line-height: 8vw;
   }
-  /* line 180, ../sass/screen.scss */
+  /* line 185, ../sass/screen.scss */
   #content #board_wrapper .wrapper .border_left {
     border-left-width: 3px;
   }
-  /* line 183, ../sass/screen.scss */
+  /* line 188, ../sass/screen.scss */
   #content #board_wrapper .wrapper .border_top {
     border-top-width: 3px;
   }
-  /* line 188, ../sass/screen.scss */
+  /* line 193, ../sass/screen.scss */
   #content #btnOption {
     width: 65vw;
   }
-  /* line 190, ../sass/screen.scss */
+  /* line 195, ../sass/screen.scss */
   #content #btnOption .btnOption {
     width: 10vw;
     height: 8vw;

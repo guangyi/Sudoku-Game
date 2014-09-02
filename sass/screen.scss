@@ -88,6 +88,11 @@ $number-line_height:4em;
 			.cell_related {
 				background:#FFDDDD;
 			}
+			.wrong {
+				background:#FF0000;
+				@include transform(background);
+				@include transition-duration(1s);
+			}
 			.preset {
 				background:#DDD;
 			}
