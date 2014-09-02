@@ -68,14 +68,14 @@ function SudokuView() {
         var numberOpt = $('.number h2:contains(' + number +')');
         var dataCount = numberOpt.data('count');
         numberOpt.data('count', dataCount + flag).attr('data-count', dataCount + flag);
-        if (dataCount + flag == 0) numberOpt.addClass('done');
-        else numberOpt.removeClass('done');
+        if (dataCount + flag == 0) $(numberOpt).parent().addClass('done');
+        else $(numberOpt).parent().removeClass('done');
     }
 
     this.initView = function (data){
+        this.clearHighLightAll();
         var elemIndex = 0;
         var allTiles = $('.sudoku_tile');
-        console.log($('.number h2'));
         $('.number h2').data('count', 9).attr('data-count', 9);
         for (var row = 0; row < 9; row++) {
             for (var col = 0; col < 9; col++) {

@@ -9,7 +9,9 @@ $border-color: #000;
 $tileWidth:4vw;
 $numberWidth:3vw;
 $number-line_height:4em;
-
+$green:#85FF9D;
+$blue:#B3FAFF;
+$darkerBlue:#00E3FF;
 
 @mixin textcenter($lineHeight) {
 	text-align:center;
@@ -60,7 +62,7 @@ header {
 				font-size:$numberWidth;
 			}
 			&:hover {
-				background:#9EE0FF;
+				background:$blue;
 			}
 		}
 		.done {
@@ -68,13 +70,15 @@ header {
 		}
 	}
 	#board_wrapper{
-		background:#FFF;
 		position:relative;
 		display:table;
 		width:$tileWidth * 9;
 		height:$tileWidth * 9;
 		margin-left:auto;
 		margin-right:auto;
+		&:hover {
+			cursor:pointer;
+		}
 		.wrapper{
 			width:100%;
 			&:first-child{
@@ -104,10 +108,10 @@ header {
 				&:last-child { border-right-width:4px;}
 			}
 			.cell_onclick {
-				background:#FFDDDD;
+				background:$darkerBlue;//#FFF45C;
 			}
 			.cell_related {
-				background:#FFDDDD;
+				background:$blue;
 			}
 			.wrong {
 				background:#FF0000;
@@ -115,10 +119,10 @@ header {
 				@include transition-duration(1s);
 			}
 			.preset {
-				background:#DDD;
+				background:#CCC;
 			}
 			.cell_sameVal {
-				background:#FFDDDD!important;
+				background:$green!important;//#ACFCBC
 			}
 			.border_left {
 				border-left-width:4px;
@@ -135,15 +139,20 @@ header {
 		margin-right:auto;
 		//font-family: cabin;
 		.btnOption {
-			width:8.8vw;
-			height:3vw;
-			border:1px solid gray;
-			background:#DDD;
-			margin-left:1vw;
+			background:#FFF;
+			border:2px solid #000;
 			font-family:cabin;
 			font-size:1.6vw;
-			&:first-child{
+			height:3vw;
+			margin-left:1vw;
+			width:8.8vw;
+			@include box-sizing(border-box);
+			&:first-child {
 				margin-left:0px;
+			}
+			&:hover {
+				background:$blue;
+				cursor:pointer;
 			}
 		}
 	}

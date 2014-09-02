@@ -77,24 +77,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url(./poetsen/PoetsenOne-Regular.otf);
 }
 
-/* line 26, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 #container {
   padding: 1em;
   font-family: cabin;
 }
 
-/* line 30, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 header {
   text-align: center;
   padding-bottom: 1em;
   margin-bottom: 0.5em;
 }
-/* line 34, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 header h1 {
   font-size: 4vw;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 .content {
   width: 40vw;
   margin-left: auto;
@@ -102,14 +102,14 @@ header h1 {
   display: table;
   text-align: center;
 }
-/* line 44, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 .content #selection {
   display: inline-block;
   margin-bottom: 1em;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 49, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .content #selection .number {
   text-align: center;
   line-height: 3vw;
@@ -123,25 +123,24 @@ header h1 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 50, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 .content #selection .number:first-child {
   margin-left: 0px;
 }
-/* line 59, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 .content #selection .number h2 {
   font-size: 3vw;
 }
-/* line 62, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 .content #selection .number:hover {
-  background: #9EE0FF;
+  background: #b3faff;
 }
-/* line 66, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .content #selection .done {
   display: none;
 }
-/* line 70, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .content #board_wrapper {
-  background: #FFF;
   position: relative;
   display: table;
   width: 36vw;
@@ -149,19 +148,23 @@ header h1 {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 78, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
+.content #board_wrapper:hover {
+  cursor: pointer;
+}
+/* line 82, ../sass/screen.scss */
 .content #board_wrapper .wrapper {
   width: 100%;
 }
-/* line 81, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 .content #board_wrapper .wrapper:first-child .sudoku_tile {
   border-top-width: 4px;
 }
-/* line 86, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .content #board_wrapper .wrapper:last-child .sudoku_tile {
   border-bottom-width: 4px;
 }
-/* line 90, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .content #board_wrapper .wrapper .sudoku_tile {
   text-align: center;
   line-height: 4vw;
@@ -174,29 +177,29 @@ header h1 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 96, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 .content #board_wrapper .wrapper .sudoku_tile h2 {
   height: 100%;
   font-size: 4vw;
   width: 100%;
 }
-/* line 103, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 .content #board_wrapper .wrapper .sudoku_tile:first-child {
   border-left-width: 4px;
 }
-/* line 104, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 .content #board_wrapper .wrapper .sudoku_tile:last-child {
   border-right-width: 4px;
 }
-/* line 106, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .content #board_wrapper .wrapper .cell_onclick {
-  background: #FFDDDD;
+  background: #00e3ff;
 }
-/* line 109, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .content #board_wrapper .wrapper .cell_related {
-  background: #FFDDDD;
+  background: #b3faff;
 }
-/* line 112, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .content #board_wrapper .wrapper .wrong {
   background: #FF0000;
   -webkit-transform: background;
@@ -209,156 +212,164 @@ header h1 {
   -o-transition-duration: 1s;
   transition-duration: 1s;
 }
-/* line 117, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 .content #board_wrapper .wrapper .preset {
-  background: #DDD;
+  background: #CCC;
 }
-/* line 120, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .content #board_wrapper .wrapper .cell_sameVal {
-  background: #ffdddd !important;
+  background: #85ff9d !important;
 }
-/* line 123, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 .content #board_wrapper .wrapper .border_left {
   border-left-width: 4px;
 }
-/* line 126, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 .content #board_wrapper .wrapper .border_top {
   border-top-width: 4px;
 }
-/* line 131, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .content #options {
   display: inline-block;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 137, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .content #options .btnOption {
-  width: 8.8vw;
-  height: 3vw;
-  border: 1px solid gray;
-  background: #DDD;
-  margin-left: 1vw;
+  background: #FFF;
+  border: 2px solid #000;
   font-family: cabin;
   font-size: 1.6vw;
+  height: 3vw;
+  margin-left: 1vw;
+  width: 8.8vw;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 145, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .content #options .btnOption:first-child {
   margin-left: 0px;
 }
+/* line 153, ../sass/screen.scss */
+.content #options .btnOption:hover {
+  background: #b3faff;
+  cursor: pointer;
+}
 
 @media all and (max-width: 53.5em) {
-  /* line 155, ../sass/screen.scss */
+  /* line 164, ../sass/screen.scss */
   header {
     text-align: center;
     padding-bottom: 1em;
     margin-bottom: 0.8em;
   }
-  /* line 159, ../sass/screen.scss */
+  /* line 168, ../sass/screen.scss */
   header h1 {
     font-size: 7vw;
   }
 
-  /* line 163, ../sass/screen.scss */
+  /* line 172, ../sass/screen.scss */
   .content {
     width: 67vw;
   }
-  /* line 166, ../sass/screen.scss */
+  /* line 175, ../sass/screen.scss */
   .content #selection .number {
     width: 5vw;
     height: 5vw;
     text-align: center;
     line-height: 5vw;
   }
-  /* line 170, ../sass/screen.scss */
+  /* line 179, ../sass/screen.scss */
   .content #selection .number h2 {
     font-size: 5vw;
   }
-  /* line 175, ../sass/screen.scss */
+  /* line 184, ../sass/screen.scss */
   .content #board_wrapper {
     width: 63vw;
   }
-  /* line 178, ../sass/screen.scss */
+  /* line 187, ../sass/screen.scss */
   .content #board_wrapper .wrapper .sudoku_tile {
     width: 7vw;
     height: 7vw;
     text-align: center;
     line-height: 7vw;
   }
-  /* line 182, ../sass/screen.scss */
+  /* line 191, ../sass/screen.scss */
   .content #board_wrapper .wrapper .sudoku_tile h2 {
     font-size: 7vw;
   }
-  /* line 189, ../sass/screen.scss */
+  /* line 198, ../sass/screen.scss */
   .content #options .btnOption {
     width: 14.1vw;
     height: 4.5vw;
     margin-left: 1vw;
     font-size: 2.2vw;
   }
-  /* line 194, ../sass/screen.scss */
+  /* line 203, ../sass/screen.scss */
   .content #options .btnOption:first-child {
     margin-left: 0px;
   }
 }
 @media all and (max-width: 40em) {
-  /* line 204, ../sass/screen.scss */
+  /* line 213, ../sass/screen.scss */
   header {
     text-align: center;
     padding-bottom: 1em;
     margin-bottom: 0.8em;
   }
-  /* line 208, ../sass/screen.scss */
+  /* line 217, ../sass/screen.scss */
   header h1 {
     font-size: 8vw;
   }
 
-  /* line 212, ../sass/screen.scss */
+  /* line 221, ../sass/screen.scss */
   .content {
     width: 76vw;
   }
-  /* line 215, ../sass/screen.scss */
+  /* line 224, ../sass/screen.scss */
   .content #selection .number {
     width: 6vw;
     height: 6vw;
     text-align: center;
     line-height: 6vw;
   }
-  /* line 219, ../sass/screen.scss */
+  /* line 228, ../sass/screen.scss */
   .content #selection .number h2 {
     font-size: 6vw;
   }
-  /* line 224, ../sass/screen.scss */
+  /* line 233, ../sass/screen.scss */
   .content #board_wrapper {
     width: 72vw;
   }
-  /* line 227, ../sass/screen.scss */
+  /* line 236, ../sass/screen.scss */
   .content #board_wrapper .wrapper .sudoku_tile {
     width: 8vw;
     height: 8vw;
     text-align: center;
     line-height: 8vw;
   }
-  /* line 231, ../sass/screen.scss */
+  /* line 240, ../sass/screen.scss */
   .content #board_wrapper .wrapper .sudoku_tile h2 {
     font-size: 6vw;
   }
-  /* line 235, ../sass/screen.scss */
+  /* line 244, ../sass/screen.scss */
   .content #board_wrapper .wrapper .border_left {
     border-left-width: 3px;
   }
-  /* line 238, ../sass/screen.scss */
+  /* line 247, ../sass/screen.scss */
   .content #board_wrapper .wrapper .border_top {
     border-top-width: 3px;
   }
-  /* line 244, ../sass/screen.scss */
+  /* line 253, ../sass/screen.scss */
   .content #options .btnOption {
     width: 12vw;
     height: 8vw;
     margin-left: 4vw;
     font-size: 3vw;
   }
-  /* line 249, ../sass/screen.scss */
+  /* line 258, ../sass/screen.scss */
   .content #options .btnOption:first-child {
     margin-left: 0px;
   }
