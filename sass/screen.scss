@@ -30,13 +30,13 @@ $number-line_height:4em;
 header {
 	text-align:center;
 	padding-bottom:1em;
-	margin-bottom:1em;
+	margin-bottom:0.5em;
 	h1 {
-		font-size: 3em;
+		font-size:$tileWidth;
 	}
 }
 .content {
-	width:43vw;// 864/16 = 54em
+	width:$tileWidth * 9 + 4vw;
 	margin-left:auto;
 	margin-right:auto;
 	display:table;
@@ -71,8 +71,8 @@ header {
 		background:#FFF;
 		position:relative;
 		display:table;
-		width:36vw;
-		height:36vw;
+		width:$tileWidth * 9;
+		height:$tileWidth * 9;
 		margin-left:auto;
 		margin-right:auto;
 		.wrapper{
@@ -135,13 +135,13 @@ header {
 		margin-right:auto;
 		//font-family: cabin;
 		.btnOption {
-			width:8vw;
+			width:8.8vw;
 			height:3vw;
 			border:1px solid gray;
 			background:#DDD;
-			margin-left:2vw;
+			margin-left:1vw;
 			font-family:cabin;
-			font-size:2vw;
+			font-size:1.6vw;
 			&:first-child{
 				margin-left:0px;
 			}
@@ -150,10 +150,18 @@ header {
 }
 
 @media all and (max-width: 53.5em) { // 800px / 16 = 53em
-	$tileWidth:8vw;
-	$numberWidth:6vw;
+	$tileWidth:7vw;
+	$numberWidth:5vw;
+	header {
+		text-align:center;
+		padding-bottom:1em;
+		margin-bottom:0.8em;
+		h1 {
+			font-size:$tileWidth;
+		}
+	}
 	.content {
-		width:73vw;
+		width:$tileWidth * 9 + 4vw;
 		#selection{
 			.number{
 				width:$numberWidth;
@@ -165,7 +173,7 @@ header {
 			}
 		} 
 		#board_wrapper {
-			width:72vw;
+			width:$tileWidth * 9;
 			.wrapper {
 				.sudoku_tile {
 					width:$tileWidth;
@@ -175,28 +183,34 @@ header {
 						font-size:$tileWidth;
 					}
 				}
-				.border_left {
-					border-left-width:3px;
-				}
-				.border_top{
-					border-top-width:3px;
-				}
 			}
 		}
 		#options {
 			.btnOption {
-				width:12vw;
-				height:4vw;
-				margin-left:2vw;
+				width:14.1vw;
+				height:4.5vw;
+				margin-left:1vw;
+				font-size:2.2vw;
+				&:first-child{
+					margin-left:0px;
+				} 
 			}
 		}
 	}
 }
-@media all and (max-width: 35em) { // 800px / 16 = 53em
+@media all and (max-width: 40em) { // 800px / 16 = 53em
 	$tileWidth:8vw;
 	$numberWidth:6vw;
+	header {
+		text-align:center;
+		padding-bottom:1em;
+		margin-bottom:0.8em;
+		h1 {
+			font-size:$tileWidth;
+		}
+	}
 	.content {
-		width:73vw;
+		width:$tileWidth * 9 + 4vw;
 		#selection{
 			.number{
 				width:$numberWidth;
@@ -208,7 +222,7 @@ header {
 			}
 		} 
 		#board_wrapper {
-			width:72vw;
+			width:$tileWidth * 9;
 			.wrapper {
 				.sudoku_tile {
 					width:$tileWidth;
@@ -228,9 +242,13 @@ header {
 		}
 		#options {
 			.btnOption {
-				width:10vw;
+				width:12vw;
 				height:8vw;
-				margin-left:5vw;
+				margin-left:4vw;
+				font-size: 3vw;
+				&:first-child{
+					margin-left:0px;
+				}
 			}
 		}
 	}

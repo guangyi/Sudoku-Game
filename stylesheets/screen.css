@@ -87,16 +87,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 header {
   text-align: center;
   padding-bottom: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 /* line 34, ../sass/screen.scss */
 header h1 {
-  font-size: 3em;
+  font-size: 4vw;
 }
 
 /* line 38, ../sass/screen.scss */
 .content {
-  width: 43vw;
+  width: 40vw;
   margin-left: auto;
   margin-right: auto;
   display: table;
@@ -234,13 +234,13 @@ header h1 {
 }
 /* line 137, ../sass/screen.scss */
 .content #options .btnOption {
-  width: 8vw;
+  width: 8.8vw;
   height: 3vw;
   border: 1px solid gray;
   background: #DDD;
-  margin-left: 2vw;
+  margin-left: 1vw;
   font-family: cabin;
-  font-size: 2vw;
+  font-size: 1.6vw;
 }
 /* line 145, ../sass/screen.scss */
 .content #options .btnOption:first-child {
@@ -249,93 +249,117 @@ header h1 {
 
 @media all and (max-width: 53.5em) {
   /* line 155, ../sass/screen.scss */
-  .content {
-    width: 73vw;
-  }
-  /* line 158, ../sass/screen.scss */
-  .content #selection .number {
-    width: 6vw;
-    height: 6vw;
+  header {
     text-align: center;
-    line-height: 6vw;
+    padding-bottom: 1em;
+    margin-bottom: 0.8em;
   }
-  /* line 162, ../sass/screen.scss */
-  .content #selection .number h2 {
-    font-size: 6vw;
+  /* line 159, ../sass/screen.scss */
+  header h1 {
+    font-size: 7vw;
   }
-  /* line 167, ../sass/screen.scss */
-  .content #board_wrapper {
-    width: 72vw;
+
+  /* line 163, ../sass/screen.scss */
+  .content {
+    width: 67vw;
+  }
+  /* line 166, ../sass/screen.scss */
+  .content #selection .number {
+    width: 5vw;
+    height: 5vw;
+    text-align: center;
+    line-height: 5vw;
   }
   /* line 170, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .sudoku_tile {
-    width: 8vw;
-    height: 8vw;
-    text-align: center;
-    line-height: 8vw;
+  .content #selection .number h2 {
+    font-size: 5vw;
   }
-  /* line 174, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .sudoku_tile h2 {
-    font-size: 8vw;
+  /* line 175, ../sass/screen.scss */
+  .content #board_wrapper {
+    width: 63vw;
   }
   /* line 178, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .border_left {
-    border-left-width: 3px;
+  .content #board_wrapper .wrapper .sudoku_tile {
+    width: 7vw;
+    height: 7vw;
+    text-align: center;
+    line-height: 7vw;
   }
-  /* line 181, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .border_top {
-    border-top-width: 3px;
+  /* line 182, ../sass/screen.scss */
+  .content #board_wrapper .wrapper .sudoku_tile h2 {
+    font-size: 7vw;
   }
-  /* line 187, ../sass/screen.scss */
+  /* line 189, ../sass/screen.scss */
   .content #options .btnOption {
-    width: 12vw;
-    height: 4vw;
-    margin-left: 2vw;
+    width: 14.1vw;
+    height: 4.5vw;
+    margin-left: 1vw;
+    font-size: 2.2vw;
+  }
+  /* line 194, ../sass/screen.scss */
+  .content #options .btnOption:first-child {
+    margin-left: 0px;
   }
 }
-@media all and (max-width: 35em) {
-  /* line 198, ../sass/screen.scss */
-  .content {
-    width: 73vw;
+@media all and (max-width: 40em) {
+  /* line 204, ../sass/screen.scss */
+  header {
+    text-align: center;
+    padding-bottom: 1em;
+    margin-bottom: 0.8em;
   }
-  /* line 201, ../sass/screen.scss */
+  /* line 208, ../sass/screen.scss */
+  header h1 {
+    font-size: 8vw;
+  }
+
+  /* line 212, ../sass/screen.scss */
+  .content {
+    width: 76vw;
+  }
+  /* line 215, ../sass/screen.scss */
   .content #selection .number {
     width: 6vw;
     height: 6vw;
     text-align: center;
     line-height: 6vw;
   }
-  /* line 205, ../sass/screen.scss */
+  /* line 219, ../sass/screen.scss */
   .content #selection .number h2 {
     font-size: 6vw;
   }
-  /* line 210, ../sass/screen.scss */
+  /* line 224, ../sass/screen.scss */
   .content #board_wrapper {
     width: 72vw;
   }
-  /* line 213, ../sass/screen.scss */
+  /* line 227, ../sass/screen.scss */
   .content #board_wrapper .wrapper .sudoku_tile {
     width: 8vw;
     height: 8vw;
     text-align: center;
     line-height: 8vw;
   }
-  /* line 217, ../sass/screen.scss */
+  /* line 231, ../sass/screen.scss */
   .content #board_wrapper .wrapper .sudoku_tile h2 {
     font-size: 6vw;
   }
-  /* line 221, ../sass/screen.scss */
+  /* line 235, ../sass/screen.scss */
   .content #board_wrapper .wrapper .border_left {
     border-left-width: 3px;
   }
-  /* line 224, ../sass/screen.scss */
+  /* line 238, ../sass/screen.scss */
   .content #board_wrapper .wrapper .border_top {
     border-top-width: 3px;
   }
-  /* line 230, ../sass/screen.scss */
+  /* line 244, ../sass/screen.scss */
   .content #options .btnOption {
-    width: 10vw;
+    width: 12vw;
     height: 8vw;
-    margin-left: 5vw;
+    margin-left: 4vw;
+    font-size: 3vw;
+  }
+  /* line 249, ../sass/screen.scss */
+  .content #options .btnOption:first-child {
+    margin-left: 0px;
   }
 }
