@@ -8,7 +8,7 @@ function SudokuDataModel(initData) {
             console.log(data);
         }
     }
-    this.clearData = function(row, col) {
+    this.resetData = function(row, col) {
         if (row != null && col != null) data[row][col] = initData[row][col];
         else if (row != null) data[row] = initData[row].slice();
         else if (col != null) {
@@ -42,7 +42,7 @@ function SudokuDataModel(initData) {
         }
         return true
     }
-    this.reset = function() {
+    this.resetAll = function() {
         data = initData;
     }
     this.getOriginData = function() {

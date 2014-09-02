@@ -6,6 +6,8 @@
 @import "compass/reset";
 @import "compass/css3";
 $border-color: #9EE0FF;
+$line-height:5em;
+$number-line_height:4em;
 %vertical-align {
   text-align:center;
   position: relative;
@@ -21,29 +23,31 @@ $border-color: #9EE0FF;
 	background: #FFAD00;
 	padding:1em;
 }
+
 #content {
-	width:54em;// 864/16 = 54em
+	width:43vw;// 864/16 = 54em
+	max-width:50em;
 	margin-left:auto;
 	margin-right:auto;
 	display:table;
 	#selection {
 		display:block;
 		margin-bottom:1em;
-		width:98%;
+		width:40vw;
 		margin-left:auto;
 		margin-right:auto;
 		overflow: hidden;
 		.number {
 			&:last-child { margin-right:0.5em;}
-			@include textcenter(5em);
+			@include textcenter(3vw);
 			float:left;
-			width:5em;
-			height:5em;
-			margin-left: 0.5em;
+			width:3vw;
+			height:3vw;
+			margin-left:1vw;
 			background:#fff;
 			border:1px solid $border-color;
 			& h2 {
-				font-size:4em;
+				font-size:2em;
 			}
 			&:hover {
 				background:#9EE0FF;
@@ -57,17 +61,23 @@ $border-color: #9EE0FF;
 		background:#FFF;
 		position:relative;
 		display:table;
+		width:40.5vw;
+		height:40.5vw;
+		margin-left:auto;
+		margin-right:auto;
 		.wrapper{
-			.sudoku_cell {
-				@include textcenter(6em);
+			width:100%;
+			.sudoku_tile {
+				@include textcenter(4.5vw);
 				//& h2{@extend %vertical-align;}
 				position:relative;
 				display:table-cell;
-				width:6em;
-				height:6em;
+				width:4.5vw;
+				height:4.5vw;
 				& h2 {
 					height:100%;
-					font-size:4em;
+					font-size:2em;
+					width:100%;
 				}
 				border:1px solid $border-color;
 				@include box-sizing(border-box);
@@ -85,12 +95,105 @@ $border-color: #9EE0FF;
 				background:#FFDDDD!important;
 			}
 			.border_left {
-				border-left-width:5px;
+				border-left-width:4px;
 			}
 			.border_top {
-				border-top-width:5px;
+				border-top-width:4px;
 			}
+		}	
+	}
+	#btnOption {
+		width:42vw;
+		margin-top:1em;
+		margin-left:auto;
+		margin-right:auto;
+		.btnOption {
+			width:8vw;
+			height:3vw;
+			border:1px solid gray;
+			background:#DDD;
+			margin-left:2vw;
 		}
-		
 	}
 }
+
+@media all and (max-width: 53.5em) { // 800px / 16 = 53em
+	$number-line_height: 3em;
+	$line-height:3em;
+	#content {
+		width:73vw;
+		#selection{
+			width:68vw;
+			.number{
+				width:6vw;
+				height:6vw;
+				@include textcenter(6vw);
+			}
+		} 
+		#board_wrapper {
+			width:72vw;
+			.wrapper {
+				.sudoku_tile {
+					width:8vw;
+					height:8vw;
+					@include textcenter(8vw);
+				}
+				.border_left {
+					border-left-width:3px;
+				}
+				.border_top{
+					border-top-width:3px;
+				}
+			}
+		}
+		#btnOption {
+			width:60vw;
+			.btnOption {
+				width:12vw;
+				height:4vw;
+				margin-left:2vw;
+			}
+		}
+	}
+}
+@media all and (max-width: 35em) { // 800px / 16 = 53em
+	$number-line_height: 3em;
+	$line-height:3em;
+	#content {
+		width:73vw;
+		#selection{
+			width:70vw;
+			.number{
+				width:6vw;
+				height:6vw;
+				@include textcenter(6vw);
+			}
+		} 
+		#board_wrapper {
+			width:72vw;
+			.wrapper {
+				.sudoku_tile {
+					width:8vw;
+					height:8vw;
+					@include textcenter(8vw);
+				}
+				.border_left {
+					border-left-width:3px;
+				}
+				.border_top{
+					border-top-width:3px;
+				}
+			}
+		}
+		#btnOption {
+			width:65vw;
+			.btnOption {
+				width:10vw;
+				height:8vw;
+				margin-left:5vw;
+			}
+		}
+	}
+}
+
+
