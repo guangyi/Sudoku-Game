@@ -35,7 +35,6 @@ function SudokuView() {
             var rowOrCol = row == null ? col : row;
             var rowOrColStr = row == null ? 'col' : 'row';
             var tileToReset = $('.need_to_fill[data-' + rowOrColStr + '=' + rowOrCol + ']');
-            console.log(tileToReset);
             // the result jquery returned is an ARRAY-LIKE obj!!!
             var numberOptArr = Array.prototype.map.call(tileToReset, function(tile) {
                 return $(tile).html()
@@ -49,7 +48,7 @@ function SudokuView() {
             });
             tileToReset.html('&nbsp;').data('val','&nbsp;').attr('data-val', '&nbsp;');
         }
-        this.clearHeightLight();
+        this.clearHighLightAll();
     }
 
     this.clearAllView = function() {

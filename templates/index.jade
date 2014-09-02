@@ -9,7 +9,10 @@ html(lang="en")
 		script(type="text/javascript" src="../Sudoku.js")
 	body
 		div#container
-			main#content
+			header
+				div.content
+					h1 Sudoku Game
+			main.content
 				div#selection
 					- var n = 1
 					while n < 10
@@ -30,7 +33,7 @@ html(lang="en")
 									- col++
 							- row++
 							- col = 0
-				aside#btnOption
+				aside#options
 					button(class='btnOption', id='clearTile') Clear Tile
 					button(class='btnOption', id='clearRow') Clear Row
 					button(class='btnOption', id='clearCol') Clear Col.

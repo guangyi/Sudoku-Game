@@ -49,36 +49,40 @@ $(document).ready(function() {
         }
     });
 
-    $('.btnoption').on('click', function() {
-        var id = $(this).attr('id');
-        var currentTile = $('.cell_onclick');
-        if (id == 'clearAll') {
-            var initData = sudokuDataModel.getOriginData();
-            console.log(initData);
-            sudokuView.initView(initData);
-            sudokuDataModel.resetAll();
-        } 
-        else if (currentTile.length == 0 ){
-            alert("select a tile to clear");
-        }
-        else {
-            var row = currentTile.data('row');
-            var col = currentTile.data('col');
-            console.log(row, col,'test');   
-            switch(id) {
-                case 'clearTile': 
-                    sudokuView.clearview(null, null, currentTile);
-                    sudokuDataModel.resetData(row, col);
-                    break;
-                case 'clearRow' : 
-                    sudokuView.clearview(row, null, null);
-                    sudokuDataModel.resetData(row, null);
-                    break;
-                case 'clearCol' : 
-                    sudokuView.clearview(null, col, null);
-                    sudokuDataModel.editData(null, col);
-                    break;
+    $('#options').on('click', function(e) {
+        if (e.target.className == 'btnOption') {
+            var id = e.target.id;
+            var currentTile = $('.cell_onclick');
+            if (id == 'clearAll') {
+                var initData = sudokuDataModel.getOriginData();
+                console.log(initData);
+                sudokuView.initView(initData);
+                sudokuDataModel.resetAll();
+            } 
+            else if (currentTile.length == 0 ){
+                alert("select a tile to clear");
+            }
+            else {
+                var row = currentTile.data('row');
+                var col = currentTile.data('col');
+                console.log(row, col,'test');   
+                switch(id) {
+                    case 'clearTile': 
+                        sudokuView.clearView(null, null, currentTile);
+                        sudokuDataModel.resetData(row, col);
+                        break;
+                    case 'clearRow' : 
+                        console.log('clearr');
+                        sudokuView.clearView(row, null, null);
+                        sudokuDataModel.resetData(row, null);
+                        break;
+                    case 'clearCol' : 
+                        sudokuView.clearView(null, col, null);
+                        sudokuDataModel.editData(null, col);
+                        break;
+                }
             }
         }
+        
     });
 });
