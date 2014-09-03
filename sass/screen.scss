@@ -20,22 +20,15 @@ $darkerBlue:#00E3FF;
             animation:#{$animaetionName};
 }
 @mixin keyframes($animaetionName) {
-    @-webkit-keyframes $animaetionName {
-        @content;
-    }
-    @-moz-keyframes $animaetionName {
-        @content;
-    }
-    @keyframes $animaetionName {
-        @content;
-    }
+    @-webkit-keyframes $animaetionName { @content;}
+    @-moz-keyframes $animaetionName { @content;}
+    @keyframes $animaetionName { @content;}
 }
 @include keyframes(highlightWrong) {
     0%   { background:#FF0000;}
     95%  { background:#FF0000;}
     100% { background:transparent;}
 }
-
 @mixin textcenter($lineHeight) {
     text-align:center;
     line-height:$lineHeight;

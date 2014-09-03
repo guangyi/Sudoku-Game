@@ -1,9 +1,9 @@
 /*
 Syntax error: Invalid CSS after "}": expected "}", was ""
-        on line 268 of /Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss
+        on line 261 of /Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss
 
 Backtrace:
-/Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss:268
+/Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss:261
 /Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:1147:in `expected'
 /Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:1085:in `expected'
 /Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:1080:in `tok!'
@@ -67,4 +67,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 268 of /Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss"; }
+  content: "Syntax error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 261 of /Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss"; }
