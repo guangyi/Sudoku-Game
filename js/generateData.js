@@ -22,6 +22,5 @@ localStorage['sudoku'] = JSON.stringify(sudoku);
     function getInitData() {
     var sudokuArr = JSON.parse(localStorage["sudoku"]);
     var random = Math.round(Math.random() * (sudokuArr.length - 1));
-    console.log(random);
     return sudokuArr[random];
 }
