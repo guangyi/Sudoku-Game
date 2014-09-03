@@ -23,6 +23,7 @@ function SudokuView() {
         $('.sudoku_tile').find('[data-row=' + element.data('row') + ']').addClass('wrong')
         .one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
         function (e) {
+            // in this way, after the animation, it wil remove class 'wrong'
             $('.wrong').removeClass('wrong');
         });
         $('.sudoku_tile').find('[data-col=' + element.data('col') + ']').addClass('wrong')
@@ -55,22 +56,15 @@ function SudokuView() {
             });
             tileToReset.html('&nbsp;').data('val','&nbsp;').attr('data-val', '&nbsp;');
         }
-        this.clearHighLightAll();
+        this.clearHighLight('cell_sameVal', 'cell_related', 'cell_onclick');
     }
 
     this.clearAllView = function() {
         $('.need_to_fill').html('&nbsp;').data('val','&nbsp;');
-        this.clearHighLightAll();
-    }
-
-    this.clearHighLightAll = function() {
-        $('.cell_onclick').removeClass('cell_onclick');
-        $('.cell_related').removeClass('cell_related');
-        $('.cell_sameVal').removeClass('cell_sameVal');
+        this.clearHighLight('cell_sameVal', 'cell_related', 'cell_onclick');
     }
     this.clearHighLight = function() {
         for (var i = 0; i < arguments.length; i++) {
-            console.log('.' + arguments[i]);
             $('.' + arguments[i]).removeClass(arguments[i]);
         }
     }
@@ -86,7 +80,7 @@ function SudokuView() {
     }
 
     this.initView = function (data){
-        this.clearHighLightAll();
+        this.clearHighLight('cell_related', 'cell_onclick', 'cell_sameVal');
         var elemIndex = 0;
         var allTiles = $('.sudoku_tile');
         $('.number h2').data('count', 9).attr('data-count', 9);

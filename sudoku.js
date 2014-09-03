@@ -1,3 +1,4 @@
+localStorage('suduku',{})
 $(document).ready(function() {
     var initData = [[6,'.',2,'.','.','.','.','.',7],
                     [8,9,'.',2,'.','.','.',6,'.'],
@@ -8,6 +9,7 @@ $(document).ready(function() {
                     ['.',4,'.','.',7,'.','.',5,3],
                     ['.',8,'.','.','.','.',9,4,'.'],
                     ['.', '.',3,'.','.',6,7,'.',8]];
+    
     var sudokuDataModel = new SudokuDataModel(initData);
     var sudokuView = new SudokuView();
     sudokuView.initView(initData);
