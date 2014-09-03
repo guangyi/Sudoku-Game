@@ -1,422 +1,70 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
+/*
+Syntax error: Invalid CSS after "}": expected "}", was ""
+        on line 261 of /Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss
 
-/* line 22, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
-}
-
-/* line 24, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../../.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
-@-webkit-keyframes highlightWrong {
-  /* line 35, ../sass/screen.scss */
-  0% {
-    background: #FF0000;
-  }
-
-  /* line 36, ../sass/screen.scss */
-  95% {
-    background: #FF0000;
-  }
-
-  /* line 37, ../sass/screen.scss */
-  100% {
-    background: transparent;
-  }
-}
-
-@-moz-keyframes highlightWrong {
-  /* line 35, ../sass/screen.scss */
-  0% {
-    background: #FF0000;
-  }
-
-  /* line 36, ../sass/screen.scss */
-  95% {
-    background: #FF0000;
-  }
-
-  /* line 37, ../sass/screen.scss */
-  100% {
-    background: transparent;
-  }
-}
-
-@keyframes highlightWrong {
-  /* line 35, ../sass/screen.scss */
-  0% {
-    background: #FF0000;
-  }
-
-  /* line 36, ../sass/screen.scss */
-  95% {
-    background: #FF0000;
-  }
-
-  /* line 37, ../sass/screen.scss */
-  100% {
-    background: transparent;
-  }
-}
-
-@font-face {
-  font-family: cabin;
-  src: url(./cabinsketch/CabinSketch-Bold.otf);
-}
-
-@font-face {
-  font-family: poetsen;
-  src: url(./poetsen/PoetsenOne-Regular.otf);
-}
-
-/* line 56, ../sass/screen.scss */
-#container {
-  padding: 1em;
-  font-family: cabin;
-}
-
-/* line 60, ../sass/screen.scss */
-header {
-  text-align: center;
-  padding-bottom: 1em;
-  margin-bottom: 0.5em;
-}
-/* line 64, ../sass/screen.scss */
-header h1 {
-  font-size: 4vw;
-}
-
-/* line 68, ../sass/screen.scss */
-.content {
-  width: 40vw;
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-  text-align: center;
-}
-/* line 74, ../sass/screen.scss */
-.content #selection {
-  display: inline-block;
-  margin-bottom: 1em;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 79, ../sass/screen.scss */
-.content #selection .number {
-  text-align: center;
-  line-height: 3vw;
-  float: left;
-  width: 3vw;
-  height: 3vw;
-  margin-left: 1vw;
-  background: #fff;
-  border: 2px solid black;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 80, ../sass/screen.scss */
-.content #selection .number:first-child {
-  margin-left: 0px;
-}
-/* line 89, ../sass/screen.scss */
-.content #selection .number h2 {
-  font-size: 3vw;
-}
-/* line 92, ../sass/screen.scss */
-.content #selection .number:hover {
-  background: #b3faff;
-  cursor: pointer;
-}
-/* line 97, ../sass/screen.scss */
-.content #selection .done {
-  display: none;
-}
-/* line 101, ../sass/screen.scss */
-.content #board_wrapper {
-  position: relative;
-  display: table;
-  width: 36vw;
-  height: 36vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 108, ../sass/screen.scss */
-.content #board_wrapper:hover {
-  cursor: pointer;
-}
-/* line 111, ../sass/screen.scss */
-.content #board_wrapper .wrapper {
-  width: 100%;
-}
-/* line 114, ../sass/screen.scss */
-.content #board_wrapper .wrapper:first-child .sudoku_tile {
-  border-top-width: 4px;
-}
-/* line 119, ../sass/screen.scss */
-.content #board_wrapper .wrapper:last-child .sudoku_tile {
-  border-bottom-width: 4px;
-}
-/* line 123, ../sass/screen.scss */
-.content #board_wrapper .wrapper .sudoku_tile {
-  text-align: center;
-  line-height: 4vw;
-  position: relative;
-  display: table-cell;
-  width: 4vw;
-  height: 4vw;
-  border: 2px solid black;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 129, ../sass/screen.scss */
-.content #board_wrapper .wrapper .sudoku_tile h2 {
-  height: 100%;
-  font-size: 4vw;
-  width: 100%;
-}
-/* line 136, ../sass/screen.scss */
-.content #board_wrapper .wrapper .sudoku_tile:first-child {
-  border-left-width: 4px;
-}
-/* line 137, ../sass/screen.scss */
-.content #board_wrapper .wrapper .sudoku_tile:last-child {
-  border-right-width: 4px;
-}
-/* line 139, ../sass/screen.scss */
-.content #board_wrapper .wrapper .cell_onclick {
-  background: #00e3ff;
-}
-/* line 142, ../sass/screen.scss */
-.content #board_wrapper .wrapper .cell_related {
-  background: #b3faff;
-}
-/* line 145, ../sass/screen.scss */
-.content #board_wrapper .wrapper .wrong {
-  -webkit-animation: highlightWrong 0.5s;
-  -moz-animation: highlightWrong 0.5s;
-  -o-animation: highlightWrong 0.5s;
-  animation: highlightWrong 0.5s;
-}
-/* line 148, ../sass/screen.scss */
-.content #board_wrapper .wrapper .preset {
-  background: #CCC;
-}
-/* line 151, ../sass/screen.scss */
-.content #board_wrapper .wrapper .cell_sameVal {
-  background: #85ff9d;
-}
-/* line 154, ../sass/screen.scss */
-.content #board_wrapper .wrapper .border_left {
-  border-left-width: 4px;
-}
-/* line 157, ../sass/screen.scss */
-.content #board_wrapper .wrapper .border_top {
-  border-top-width: 4px;
-}
-/* line 162, ../sass/screen.scss */
-.content #options {
-  display: inline-block;
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 168, ../sass/screen.scss */
-.content #options .btnOption {
-  background: #FFF;
-  border: 2px solid #000;
-  font-family: cabin;
-  font-size: 1.6vw;
-  height: 3vw;
-  margin-left: 1vw;
-  width: 8.8vw;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 177, ../sass/screen.scss */
-.content #options .btnOption:first-child {
-  margin-left: 0px;
-}
-/* line 180, ../sass/screen.scss */
-.content #options .btnOption:hover {
-  background: #b3faff;
-  cursor: pointer;
-}
-
-@media all and (max-width: 53.5em) {
-  /* line 191, ../sass/screen.scss */
-  header {
-    text-align: center;
-    padding-bottom: 1em;
-    margin-bottom: 0.8em;
-  }
-  /* line 195, ../sass/screen.scss */
-  header h1 {
-    font-size: 7vw;
-  }
-
-  /* line 199, ../sass/screen.scss */
-  .content {
-    width: 67vw;
-  }
-  /* line 202, ../sass/screen.scss */
-  .content #selection .number {
-    width: 5vw;
-    height: 5vw;
-    text-align: center;
-    line-height: 5vw;
-  }
-  /* line 206, ../sass/screen.scss */
-  .content #selection .number h2 {
-    font-size: 5vw;
-  }
-  /* line 211, ../sass/screen.scss */
-  .content #board_wrapper {
-    width: 63vw;
-  }
-  /* line 214, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .sudoku_tile {
-    width: 7vw;
-    height: 7vw;
-    text-align: center;
-    line-height: 7vw;
-  }
-  /* line 218, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .sudoku_tile h2 {
-    font-size: 7vw;
-  }
-  /* line 225, ../sass/screen.scss */
-  .content #options .btnOption {
-    width: 14.1vw;
-    height: 4.5vw;
-    margin-left: 1vw;
-    font-size: 2.2vw;
-  }
-  /* line 230, ../sass/screen.scss */
-  .content #options .btnOption:first-child {
-    margin-left: 0px;
-  }
-}
-@media all and (max-width: 40em) {
-  /* line 240, ../sass/screen.scss */
-  header {
-    text-align: center;
-    padding-bottom: 1em;
-    margin-bottom: 0.8em;
-  }
-  /* line 244, ../sass/screen.scss */
-  header h1 {
-    font-size: 8vw;
-  }
-
-  /* line 248, ../sass/screen.scss */
-  .content {
-    width: 76vw;
-  }
-  /* line 251, ../sass/screen.scss */
-  .content #selection .number {
-    width: 6vw;
-    height: 6vw;
-    text-align: center;
-    line-height: 6vw;
-  }
-  /* line 255, ../sass/screen.scss */
-  .content #selection .number h2 {
-    font-size: 6vw;
-  }
-  /* line 260, ../sass/screen.scss */
-  .content #board_wrapper {
-    width: 72vw;
-  }
-  /* line 263, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .sudoku_tile {
-    width: 8vw;
-    height: 8vw;
-    text-align: center;
-    line-height: 8vw;
-  }
-  /* line 267, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .sudoku_tile h2 {
-    font-size: 6vw;
-  }
-  /* line 271, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .border_left {
-    border-left-width: 3px;
-  }
-  /* line 274, ../sass/screen.scss */
-  .content #board_wrapper .wrapper .border_top {
-    border-top-width: 3px;
-  }
-  /* line 280, ../sass/screen.scss */
-  .content #options .btnOption {
-    width: 12vw;
-    height: 8vw;
-    margin-left: 4vw;
-    font-size: 3vw;
-  }
-  /* line 285, ../sass/screen.scss */
-  .content #options .btnOption:first-child {
-    margin-left: 0px;
-  }
-}
+Backtrace:
+/Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss:261
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:1147:in `expected'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:1085:in `expected'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:1080:in `tok!'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:536:in `block'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:529:in `ruleset'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:591:in `block in declaration_or_ruleset'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:1123:in `call'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:1123:in `rethrow'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:592:in `declaration_or_ruleset'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:554:in `block_child'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:546:in `block_contents'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:535:in `block'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:529:in `ruleset'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:553:in `block_child'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:546:in `block_contents'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:82:in `stylesheet'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/scss/parser.rb:27:in `parse'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/engine.rb:342:in `_to_tree'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:139:in `block (2 levels) in compile'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:126:in `timed'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:138:in `block in compile'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/logger.rb:45:in `red'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:137:in `compile'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:118:in `compile_if_required'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:101:in `each'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:101:in `block in run'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:126:in `timed'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/compiler.rb:100:in `run'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/commands/watch_project.rb:147:in `recompile'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/commands/watch_project.rb:87:in `perform'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/commands/base.rb:18:in `execute'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/bin/compass:30:in `block in <top (required)>'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/bin/compass:44:in `call'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/gems/compass-0.12.6/bin/compass:44:in `<top (required)>'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/bin/compass:23:in `load'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/bin/compass:23:in `<main>'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/bin/ruby_executable_hooks:15:in `eval'
+/Users/zhouguangyi2009/.rvm/gems/ruby-2.1.1@rails4.1/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 261 of /Users/zhouguangyi2009/Documents/Interview_Exercise&Prep/Uber/sass/screen.scss"; }

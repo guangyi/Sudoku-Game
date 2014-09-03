@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <script type="text/javascript" src="../jquery-1.10.2.js"></script>
     <script type="text/javascript" src="../SudokuDataModel.js"></script>
+    <script type="text/javascript" src="../generateData.js"></script>
     <script type="text/javascript" src="../SudokuView.js"></script>
+    <script type="text/javascript" src="../ModelView.js"></script>
     <script type="text/javascript" src="../Sudoku.js"></script>
   </head>
   <body>
@@ -49,273 +51,280 @@
         <div id="board_wrapper">
           <div display="table" width="100%" top="0em" class="wrapper">
             <div class="sudoku_tile">
-              <h2 data-row='0' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='0' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='0' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='0' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='0' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='0' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='0' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='0' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='0' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='0' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
           <div display="table" width="100%" top="4em" class="wrapper">
             <div class="sudoku_tile">
-              <h2 data-row='1' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='1' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='1' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='1' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='1' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='1' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='1' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='1' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='1' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='1' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
           <div display="table" width="100%" top="8em" class="wrapper">
             <div class="sudoku_tile">
-              <h2 data-row='2' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='2' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='2' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='2' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='2' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='2' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='2' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='2' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='2' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='2' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
           <div display="table" width="100%" top="12em" class="wrapper">
             <div class="sudoku_tile border_top">
-              <h2 data-row='3' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='3' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='3' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left border_top">
-              <h2 data-row='3' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='3' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='3' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left border_top">
-              <h2 data-row='3' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='3' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='3' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='3' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
           <div display="table" width="100%" top="16em" class="wrapper">
             <div class="sudoku_tile">
-              <h2 data-row='4' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='4' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='4' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='4' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='4' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='4' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='4' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='4' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='4' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='4' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
           <div display="table" width="100%" top="20em" class="wrapper">
             <div class="sudoku_tile">
-              <h2 data-row='5' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='5' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='5' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='5' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='5' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='5' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='5' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='5' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='5' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='5' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
           <div display="table" width="100%" top="24em" class="wrapper">
             <div class="sudoku_tile border_top">
-              <h2 data-row='6' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='6' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='6' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left border_top">
-              <h2 data-row='6' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='6' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='6' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left border_top">
-              <h2 data-row='6' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='6' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_top">
-              <h2 data-row='6' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='6' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
           <div display="table" width="100%" top="28em" class="wrapper">
             <div class="sudoku_tile">
-              <h2 data-row='7' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='7' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='7' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='7' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='7' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='7' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='7' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='7' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='7' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='7' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
           <div display="table" width="100%" top="32em" class="wrapper">
             <div class="sudoku_tile">
-              <h2 data-row='8' data-col='0' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='0' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='8' data-col='1' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='1' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='8' data-col='2' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='2' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='8' data-col='3' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='3' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='8' data-col='4' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='4' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='8' data-col='5' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='5' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile border_left">
-              <h2 data-row='8' data-col='6' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='6' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='8' data-col='7' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='7' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
             <div class="sudoku_tile">
-              <h2 data-row='8' data-col='8' data-val="&amp;nbsp;">&nbsp</h2>
+              <h2 data-row='8' data-col='8' data-val="&amp;nbsp;">&nbsp;</h2>
             </div>
           </div>
         </div>
         <aside id="options">
-          <button id="clearTile" class="btnOption">Clear Tile</button>
-          <button id="clearRow" class="btnOption"> Clear Row</button>
-          <button id="clearCol" class="btnOption"> Clear Col.</button>
-          <button id="clearAll" class="btnOption"> Clear All</button>
+          <button id="clear_tile" class="btn_option">Clear Tile</button>
+          <button id="clear_row" class="btn_option"> Clear Row</button>
+          <button id="clear_col" class="btn_option"> Clear Col.</button>
+          <button id="clear_all" class="btn_option"> Clear All</button>
         </aside>
       </main>
+      <div id="model">
+        <div class="content">
+          <h1>Congratulations! You solve the Sudoku!</h1>
+          <button id="newGame" class="btn_option_new_game">New Game</button>
+          <button id="cancel" class="btn_option_new_game"> Cancel</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

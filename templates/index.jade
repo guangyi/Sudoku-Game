@@ -6,7 +6,9 @@ html(lang="en")
 		meta(charset='UTF-8')
 		script(type="text/javascript" src="../jquery-1.10.2.js")
 		script(type="text/javascript" src="../SudokuDataModel.js")
+		script(type="text/javascript" src="../generateData.js")
 		script(type="text/javascript" src="../SudokuView.js")
+		script(type="text/javascript" src="../ModelView.js")
 		script(type="text/javascript" src="../Sudoku.js")
 	body
 		div#container
@@ -23,19 +25,23 @@ html(lang="en")
 				div#board_wrapper
 					- var col = 0
 					- var row = 0
-					//- var sudokuObj = [[6,'.',2,'.','.','.','.','.',7],[8,9,'.',2,'.','.','.',6,'.'],['.',5,4,'.',6,'.',8,'.',2],['.',7,'.',6, '.',5,4,'.','.'],[4,'.','.',3,'.',9, '.','.',6],[9,6,'.','.','.','.',2,'.',5],['.',4,'.','.',7,'.','.',5,3],['.',8,'.','.','.','.',9,4,'.'],['.', '.',3,'.','.',6,7,'.',8]];
 					while row < 9
 						div.wrapper(display="table", width="100%", top=row * 4 + 'em')
 							while col < 9
 								- var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
 								- var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
 								div(class=("sudoku_tile " + borderLeft + borderTop).trim())
-									h2(data-row=row, data-col=col, data-val='&nbsp;') &nbsp
+									h2(data-row=row, data-col=col, data-val='&nbsp;') &nbsp;
 									- col++
 							- row++
 							- col = 0
 				aside#options
-					button(class='btnOption', id='clearTile') Clear Tile
-					button(class='btnOption', id='clearRow')  Clear Row
-					button(class='btnOption', id='clearCol')  Clear Col.
-					button(class='btnOption', id='clearAll')  Clear All
+					button(class='btn_option', id='clear_tile') Clear Tile
+					button(class='btn_option', id='clear_row')  Clear Row
+					button(class='btn_option', id='clear_col')  Clear Col.
+					button(class='btn_option', id='clear_all')  Clear All
+			div#model
+				div.content
+					h1 Congratulations! You solve the Sudoku!
+					button(class='btn_option_new_game', id='newGame') New Game
+					button(class='btn_option_new_game', id='cancel')  Cancel
