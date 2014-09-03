@@ -51,11 +51,12 @@ function SudokuView() {
         else $(numberOpt).parent().removeClass('done');
     }
     this.clearView = function(row, col, element) {
-        /** This function allows to clear part of the view
-        *   Could be the value in one tile
-        *   Or values in a row/col
-        *   Will also update the numbers data-count attribute
-        **/
+        /** 
+         *  This function allows to clear part of the view
+         *  Could be the value in one tile
+         *  Or values in a row/col
+         *  Will also update the numbers data-count attribute
+         */
         if (element != null && element.hasClass('need_to_fill')) {
             // update number option data-count
             var dataVal = element.data('val');
@@ -81,12 +82,13 @@ function SudokuView() {
         this.clearHighLight('tile_sameVal', 'tile_related', 'tile_onclick');
     }
     this.initView = function (data){
-        /** This function can use to reset or initialize the view
-        *   it depends on the data
-        *   it will initialize numbers' data-count to 9
-        *   update the tile value and its data-val attribute
-        *   update numbers data-count according to its appearance in data
-        **/
+        /** 
+         *  This function can be used to reset or initialize the view
+         *  it depends on the data
+         *  it will initialize numbers' data-count to 9
+         *  update the tile value and its data-val attribute
+         *  update numbers data-count according to its appearance in data
+         */
         this.clearHighLight('tile_related', 'tile_onclick', 'tile_sameVal');
         var elemIndex = 0;
         var allTiles = $('.sudoku_tile');

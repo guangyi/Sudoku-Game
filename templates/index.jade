@@ -1,47 +1,47 @@
 doctype html
 html(lang="en")
-	head
-		title="Sudoku Game"
-		link(rel="stylesheet",type="text/css", media="screen, projection", href="../stylesheets/screen.css")
-		meta(charset='UTF-8')
-		script(type="text/javascript" src="../jquery-1.10.2.js")
-		script(type="text/javascript" src="../SudokuDataModel.js")
-		script(type="text/javascript" src="../generateData.js")
-		script(type="text/javascript" src="../SudokuView.js")
-		script(type="text/javascript" src="../ModelView.js")
-		script(type="text/javascript" src="../Sudoku.js")
-	body
-		div#container
-			header
-				div.content
-					h1 Sudoku Game
-			main.content
-				div#selection
-					- var n = 1
-					while n < 10
-						div.number
-							h2(class="selectable_number")=n++
-				
-				div#board_wrapper
-					- var col = 0
-					- var row = 0
-					while row < 9
-						div.wrapper(display="table", width="100%", top=row * 4 + 'em')
-							while col < 9
-								- var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
-								- var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
-								div(class=("sudoku_tile " + borderLeft + borderTop).trim())
-									h2(data-row=row, data-col=col, data-val='&nbsp;') &nbsp;
-									- col++
-							- row++
-							- col = 0
-				aside#options
-					button(class='btn_option', id='clear_tile') Clear Tile
-					button(class='btn_option', id='clear_row')  Clear Row
-					button(class='btn_option', id='clear_col')  Clear Col.
-					button(class='btn_option', id='clear_all')  Clear All
-			div#modal
-				div.content
-					h1 Congratulations! You solve the Sudoku!
-					button(class='btn_option_new_game', id='newGame') New Game
-					button(class='btn_option_new_game', id='cancel')  Cancel
+    head
+        title="Sudoku Game"
+        link(rel="stylesheet",type="text/css", media="screen, projection", href="../stylesheets/screen.css")
+        meta(charset='UTF-8')
+        script(type="text/javascript" src="../jquery-1.10.2.js")
+        script(type="text/javascript" src="../SudokuDataModel.js")
+        script(type="text/javascript" src="../generateData.js")
+        script(type="text/javascript" src="../SudokuView.js")
+        script(type="text/javascript" src="../ModelView.js")
+        script(type="text/javascript" src="../Sudoku.js")
+    body
+        div#container
+            header
+                div.content
+                    h1 Sudoku Game
+            main.content
+                div#selection
+                    - var n = 1
+                    while n < 10
+                        div.number
+                            h2(class="selectable_number")=n++
+                
+                div#board_wrapper
+                    - var col = 0
+                    - var row = 0
+                    while row < 9
+                        div.wrapper(display="table", width="100%", top=row * 4 + 'em')
+                            while col < 9
+                                - var borderLeft = (col != 0 && col % 3 == 0) ? 'border_left ' : ''
+                                - var borderTop = (row != 0 && row % 3 == 0) ? 'border_top ' : ''
+                                div(class=("sudoku_tile " + borderLeft + borderTop).trim())
+                                    h2(data-row=row, data-col=col, data-val='&nbsp;') &nbsp;
+                                    - col++
+                            - row++
+                            - col = 0
+                aside#options
+                    button(class='btn_option', id='clear_tile') Clear Tile
+                    button(class='btn_option', id='clear_row')  Clear Row
+                    button(class='btn_option', id='clear_col')  Clear Col.
+                    button(class='btn_option', id='clear_all')  Clear All
+            div#modal
+                div.content
+                    h1 Congratulations! You solve the Sudoku!
+                    button(class='btn_option_new_game', id='newGame') New Game
+                    button(class='btn_option_new_game', id='cancel')  Cancel
