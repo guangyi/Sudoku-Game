@@ -1,6 +1,6 @@
-function ModelView() {
+function ModalView() {
 	this.show = function() {
-		$('#model').animate({
+		$('#modal').animate({
 			top:'0px'
 		}, 1000);
 	}
@@ -9,12 +9,12 @@ function ModelView() {
     	var sudokuDataModel = new SudokuDataModel(initData);
     	var sudokuView = new SudokuView();
     	sudokuView.initView(initData);
-    	$('#model').animate({
+    	$('#modal').animate({
 			top:'-1000px'
 		}, 1000);
 	}
 	this.cancel = function() {
-		$('#model').animate({
+		$('#modal').animate({
 			top:'-1000px'
 		}, 1000);
 	}

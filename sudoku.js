@@ -2,11 +2,11 @@ $(document).ready(function() {
     var initData = getInitData();
     var sudokuDataModel = new SudokuDataModel(initData);
     var sudokuView = new SudokuView();
-    var modelView = new ModelView();
+    var modalView = new ModalView();
     sudokuView.initView(initData);
 
     $('#board_wrapper').on('click', function(e) {
-        // when click on each tile, it will highlight related tiles
+        // When click on each tile, it will highlight related tiles
         // Either tiles in the same row and col, or tiles has same value
         if (e.target.className == 'preset' || 'need_to_fill') { 
             // e.target should be $(.sudoku_cell h2)
@@ -16,10 +16,12 @@ $(document).ready(function() {
         }
     });
     $('#selection').on('click', function(e) {
-        /** when click on numbers, it should select a tile to fill up first
-        *   Get the value on that number, add it to data model, validate in current
-        *   Situation, -- column, row and big unit, not the final answer.
-        *  e.target is .number h2 **/
+        /** 
+         *  When click on numbers, it should select a tile to fill up first
+         *  Get the value on that number, add it to data model, validate in current
+         *  Situation, -- column, row and big unit, not the final answer.
+         *  e.target is .number h2 
+         */
         var currentTile = $('.tile_onclick');
         if (e.target && e.target.className == 'selectable_number') {
             if (currentTile.length > 0 && currentTile.hasClass('need_to_fill')) {
@@ -87,9 +89,9 @@ $(document).ready(function() {
         // It allows user to either start a new game 
         // or just go back to see the result
         if (e.target && e.target.id == 'newGame') {
-            modelView.startNewGame();
+            modalView.startNewGame();
         } else if (e.target && e.target.id == 'cancel') {
-            modelView.cancel();
+            modalView.cancel();
         }
     });
 });

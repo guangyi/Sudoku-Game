@@ -10,8 +10,8 @@ $tileWidth:4vw;
 $numberWidth:3vw;
 $number-line_height:4em;
 $green:#85FF9D;
-$blue:#B3FAFF;
-$darkerBlue:#00E3FF;
+$yellow:#FBFF8A;
+$darkerYellow:#F9FF40;
 
 @mixin animation($animaetionName) {
     -webkit-animation:#{$animaetionName};
@@ -53,7 +53,7 @@ header {
     margin-bottom:0.5em;
     h1 { font-size:$tileWidth;}
 }
-#model {
+#modal {
     background:#FFF;
     width:100%;
     height:100%;
@@ -100,11 +100,11 @@ header {
             @include box-sizing(border-box);
             & h2 { font-size:$numberWidth;}
             &:hover {
-                background:$blue;
+                background:$yellow;
                 cursor:pointer;
             }
         }
-        .done { display:none; }
+        .done { display:none;}
     }
     #board_wrapper{
         position:relative;
@@ -138,11 +138,11 @@ header {
                 &:first-child{ border-left-width:4px;}
                 &:last-child { border-right-width:4px;}
             }
-            .tile_onclick { background:$darkerBlue;//#FFF45C; }
-            .tile_related { background:$blue;}
+            .tile_onclick { background:$darkerYellow;}
+            .tile_related { background:$yellow;}
             .wrong { @include animation('highlightWrong 0.5s');}
             .preset { background:#CDC;}
-            .tile_sameVal { background:$green;//#ACFCBC }
+            .tile_sameVal { background:$green;}
             .border_left { border-left-width:4px;}
             .border_top { border-top-width:4px;}
         }   
@@ -163,7 +163,7 @@ header {
             @include box-sizing(border-box);
             &:first-child { margin-left:0px;}
             &:hover {
-                background:$blue;
+                background:$yellow;
                 cursor:pointer;
             }
         }
@@ -173,7 +173,7 @@ header {
 @media all and (max-width: 53.5em) { // 800px / 16 = 53em
     $tileWidth:7vw;
     $numberWidth:5vw;
-    #model { padding-top:35vw;}
+    #modal { padding-top:35vw;}
     header {
         text-align:center;
         padding-bottom:1em;
@@ -215,7 +215,7 @@ header {
 @media all and (max-width: 40em) { // 800px / 16 = 53em
     $tileWidth:8vw;
     $numberWidth:6vw;
-    #model { padding-top:45vw; }
+    #modal { padding-top:45vw; }
     header {
         text-align:center;
         padding-bottom:1em;
