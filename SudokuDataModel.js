@@ -5,7 +5,6 @@ function SudokuDataModel(initData) {
     this.editData = function(row, col, value) {
         if (row != null && col != null) {
             data[row][col] = value;
-            console.log(data);
         }
     }
     this.resetData = function(row, col) {

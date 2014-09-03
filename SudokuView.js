@@ -7,7 +7,6 @@ function SudokuView() {
         //It won't change the one in html. use only data/attr cause some error in both highlight and validation
     }
     this.highlightTile = function(element) {
-        this.clearHighLightAll();
         element.addClass('cell_onclick');
         if (element.data('val') != '&nbsp;') 
             this.highlightSameVal(element);
@@ -21,8 +20,16 @@ function SudokuView() {
         $('.sudoku_tile').find('[data-val=' + element.data('val') + ']').addClass('cell_sameVal');
     }
     this.highlightWrong = function(element) {
-        var back = $('.cell_related').css('background-color');
-        $('.cell_related').addClass('wrong');
+        $('.sudoku_tile').find('[data-row=' + element.data('row') + ']').addClass('wrong')
+        .one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
+        function (e) {
+            $('.wrong').removeClass('wrong');
+        });
+        $('.sudoku_tile').find('[data-col=' + element.data('col') + ']').addClass('wrong')
+        .one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
+        function (e) {
+            $('.wrong').removeClass('wrong');
+        });
     }
     this.clearView = function(row, col, element) {
         if (element != null && element.hasClass('need_to_fill')) {
@@ -60,6 +67,12 @@ function SudokuView() {
         $('.cell_onclick').removeClass('cell_onclick');
         $('.cell_related').removeClass('cell_related');
         $('.cell_sameVal').removeClass('cell_sameVal');
+    }
+    this.clearHighLight = function() {
+        for (var i = 0; i < arguments.length; i++) {
+            console.log('.' + arguments[i]);
+            $('.' + arguments[i]).removeClass(arguments[i]);
+        }
     }
     this.clearHighLightRelated = function() {
         $('.cell_related').removeClass('cell_related');

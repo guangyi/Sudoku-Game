@@ -13,6 +13,30 @@ $green:#85FF9D;
 $blue:#B3FAFF;
 $darkerBlue:#00E3FF;
 
+@mixin animation($animaetionName) {
+	-webkit-animation: #{$animaetionName};
+	   -moz-animation: #{$animaetionName};
+	     -o-animation: #{$animaetionName};
+	   		animation: #{$animaetionName};
+}
+
+@mixin keyframes($animaetionName) {
+	@-webkit-keyframes $animaetionName {
+		@content;
+	}
+	@-moz-keyframes $animaetionName {
+		@content;
+	}
+	@keyframes $animaetionName {
+		@content;
+	}
+}
+@include keyframes(highlightWrong) {
+	0%   { background:#FF0000;}
+	95%  { background:#FF0000;}
+	100% { background:transparent;}
+}
+
 @mixin textcenter($lineHeight) {
 	text-align:center;
 	line-height:$lineHeight;
@@ -25,6 +49,10 @@ $darkerBlue:#00E3FF;
 	font-family:poetsen;
 	src:url(./poetsen/PoetsenOne-Regular.otf);
 }
+
+
+
+
 #container {
 	padding:1em;
 	font-family:cabin;
@@ -63,6 +91,7 @@ header {
 			}
 			&:hover {
 				background:$blue;
+				cursor:pointer;
 			}
 		}
 		.done {
@@ -114,15 +143,13 @@ header {
 				background:$blue;
 			}
 			.wrong {
-				background:#FF0000;
-				@include transform(background);
-				@include transition-duration(1s);
+				@include animation('highlightWrong 0.5s');
 			}
 			.preset {
 				background:#CCC;
 			}
 			.cell_sameVal {
-				background:$green!important;//#ACFCBC
+				background:$green;//#ACFCBC
 			}
 			.border_left {
 				border-left-width:4px;

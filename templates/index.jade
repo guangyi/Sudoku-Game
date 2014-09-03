@@ -3,6 +3,7 @@ html(lang="en")
 	head
 		title="Sudoku Game"
 		link(rel="stylesheet",type="text/css", media="screen, projection", href="../stylesheets/screen.css")
+		meta(charset='UTF-8')
 		script(type="text/javascript" src="../jquery-1.10.2.js")
 		script(type="text/javascript" src="../SudokuDataModel.js")
 		script(type="text/javascript" src="../SudokuView.js")
@@ -35,6 +36,6 @@ html(lang="en")
 							- col = 0
 				aside#options
 					button(class='btnOption', id='clearTile') Clear Tile
-					button(class='btnOption', id='clearRow') Clear Row
-					button(class='btnOption', id='clearCol') Clear Col.
-					button(class='btnOption', id='clearAll') Clear All
+					button(class='btnOption', id='clearRow')  Clear Row
+					button(class='btnOption', id='clearCol')  Clear Col.
+					button(class='btnOption', id='clearAll')  Clear All
