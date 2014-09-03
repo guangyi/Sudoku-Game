@@ -5,7 +5,7 @@
 
 @import "compass/reset";
 @import "compass/css3";
-$border-color: #000;
+$border-color:#000;
 $tileWidth:4vw;
 $numberWidth:3vw;
 $number-line_height:4em;
@@ -14,280 +14,254 @@ $blue:#B3FAFF;
 $darkerBlue:#00E3FF;
 
 @mixin animation($animaetionName) {
-	-webkit-animation: #{$animaetionName};
-	   -moz-animation: #{$animaetionName};
-	     -o-animation: #{$animaetionName};
-	   		animation: #{$animaetionName};
+    -webkit-animation:#{$animaetionName};
+       -moz-animation:#{$animaetionName};
+         -o-animation:#{$animaetionName};
+            animation:#{$animaetionName};
 }
-
 @mixin keyframes($animaetionName) {
-	@-webkit-keyframes $animaetionName {
-		@content;
-	}
-	@-moz-keyframes $animaetionName {
-		@content;
-	}
-	@keyframes $animaetionName {
-		@content;
-	}
+    @-webkit-keyframes $animaetionName {
+        @content;
+    }
+    @-moz-keyframes $animaetionName {
+        @content;
+    }
+    @keyframes $animaetionName {
+        @content;
+    }
 }
 @include keyframes(highlightWrong) {
-	0%   { background:#FF0000;}
-	95%  { background:#FF0000;}
-	100% { background:transparent;}
+    0%   { background:#FF0000;}
+    95%  { background:#FF0000;}
+    100% { background:transparent;}
 }
 
 @mixin textcenter($lineHeight) {
-	text-align:center;
-	line-height:$lineHeight;
+    text-align:center;
+    line-height:$lineHeight;
 }
 @font-face {
-	font-family:cabin;
-	src:url(./cabinsketch/CabinSketch-Bold.otf);
+    font-family:cabin;
+    src:url(./cabinsketch/CabinSketch-Bold.otf);
 }
 @font-face {
-	font-family:poetsen;
-	src:url(./poetsen/PoetsenOne-Regular.otf);
+    font-family:poetsen;
+    src:url(./poetsen/PoetsenOne-Regular.otf);
 }
-
-
-
 
 #container {
-	padding:1em;
-	font-family:cabin;
+    padding:1em;
+    font-family:cabin;
+    position:relative;
 }
 header {
-	text-align:center;
-	padding-bottom:1em;
-	margin-bottom:0.5em;
-	h1 {
-		font-size:$tileWidth;
-	}
+    text-align:center;
+    padding-bottom:1em;
+    margin-bottom:0.5em;
+    h1 { font-size:$tileWidth;}
+}
+#model {
+    background:#FFF;
+    width:100%;
+    height:100%;
+    opacity:0.9;
+    position:absolute;
+    padding-top:1vw;
+    top:-1000px;
+    z-index:10;
+    h1 { font-size:7vw;}
+    .btn_option_new_game {
+        font-family:cabin;
+        width:20vw;
+        height:6vw;
+        font-size:3vw;
+        border:4px solid $border-color;
+        margin:3vw;
+        background:#FFF;
+        &:hover {
+            cursor:pointer;
+            background:$green;
+        }
+    }
 }
 .content {
-	width:$tileWidth * 9 + 4vw;
-	margin-left:auto;
-	margin-right:auto;
-	display:table;
-	text-align:center;
-	#selection {
-		display:inline-block;
-		margin-bottom:1em;
-		margin-left:auto;
-		margin-right:auto;
-		.number {
-			&:first-child { margin-left:0px;}
-			@include textcenter($numberWidth);
-			float:left;
-			width:$numberWidth;
-			height:$numberWidth;
-			margin-left:1vw;
-			background:#fff;
-			border:2px solid $border-color;
-			@include box-sizing(border-box);
-			& h2 {
-				font-size:$numberWidth;
-			}
-			&:hover {
-				background:$blue;
-				cursor:pointer;
-			}
-		}
-		.done {
-			display: none;
-		}
-	}
-	#board_wrapper{
-		position:relative;
-		display:table;
-		width:$tileWidth * 9;
-		height:$tileWidth * 9;
-		margin-left:auto;
-		margin-right:auto;
-		&:hover {
-			cursor:pointer;
-		}
-		.wrapper{
-			width:100%;
-			&:first-child{
-				.sudoku_tile{
-					border-top-width:4px;
-				}
-			}
-			&:last-child{
-				.sudoku_tile{
-					border-bottom-width:4px;
-				}
-			}
-			.sudoku_tile {
-				@include textcenter($tileWidth);
-				position:relative;
-				display:table-cell;
-				width:$tileWidth;
-				height:$tileWidth;
-				& h2 {
-					height:100%;
-					font-size:4vw;
-					width:100%;
-				}
-				border:2px solid $border-color;
-				@include box-sizing(border-box);
-				&:first-child{ border-left-width:4px; }
-				&:last-child { border-right-width:4px;}
-			}
-			.cell_onclick {
-				background:$darkerBlue;//#FFF45C;
-			}
-			.cell_related {
-				background:$blue;
-			}
-			.wrong {
-				@include animation('highlightWrong 0.5s');
-			}
-			.preset {
-				background:#CCC;
-			}
-			.cell_sameVal {
-				background:$green;//#ACFCBC
-			}
-			.border_left {
-				border-left-width:4px;
-			}
-			.border_top {
-				border-top-width:4px;
-			}
-		}	
-	}
-	#options {
-		display:inline-block;
-		margin-top:1em;
-		margin-left:auto;
-		margin-right:auto;
-		//font-family: cabin;
-		.btnOption {
-			background:#FFF;
-			border:2px solid #000;
-			font-family:cabin;
-			font-size:1.6vw;
-			height:3vw;
-			margin-left:1vw;
-			width:8.8vw;
-			@include box-sizing(border-box);
-			&:first-child {
-				margin-left:0px;
-			}
-			&:hover {
-				background:$blue;
-				cursor:pointer;
-			}
-		}
-	}
+    width:$tileWidth * 9 + 4vw;
+    margin-left:auto;
+    margin-right:auto;
+    display:table;
+    text-align:center;
+    #selection {
+        display:inline-block;
+        margin-bottom:1em;
+        margin-left:auto;
+        margin-right:auto;
+        .number {
+            &:first-child {margin-left:0px;}
+            @include textcenter($numberWidth);
+            float:left;
+            width:$numberWidth;
+            height:$numberWidth;
+            margin-left:1vw;
+            background:#fff;
+            border:2px solid $border-color;
+            @include box-sizing(border-box);
+            & h2 { font-size:$numberWidth;}
+            &:hover {
+                background:$blue;
+                cursor:pointer;
+            }
+        }
+        .done { display:none; }
+    }
+    #board_wrapper{
+        position:relative;
+        display:table;
+        width:$tileWidth * 9;
+        height:$tileWidth * 9;
+        margin-left:auto;
+        margin-right:auto;
+        &:hover { cursor:pointer;}
+        .wrapper{
+            width:100%;
+            &:first-child{
+                .sudoku_tile{ border-top-width:4px;}
+            }
+            &:last-child{
+                .sudoku_tile{ border-bottom-width:4px;}
+            }
+            .sudoku_tile {
+                @include textcenter($tileWidth);
+                position:relative;
+                display:table-cell;
+                width:$tileWidth;
+                height:$tileWidth;
+                & h2 {
+                    height:100%;
+                    font-size:4vw;
+                    width:100%;
+                }
+                border:2px solid $border-color;
+                @include box-sizing(border-box);
+                &:first-child{ border-left-width:4px;}
+                &:last-child { border-right-width:4px;}
+            }
+            .tile_onclick { background:$darkerBlue;//#FFF45C; }
+            .tile_related { background:$blue;}
+            .wrong { @include animation('highlightWrong 0.5s');}
+            .preset { background:#CDC;}
+            .tile_sameVal { background:$green;//#ACFCBC }
+            .border_left { border-left-width:4px;}
+            .border_top { border-top-width:4px;}
+        }   
+    }
+    #options {
+        display:inline-block;
+        margin-top:1em;
+        margin-left:auto;
+        margin-right:auto;
+        .btn_option {
+            background:#FFF;
+            border:2px solid $border-color;
+            font-family:cabin;
+            font-size:1.6vw;
+            height:3vw;
+            margin-left:1vw;
+            width:8.8vw;
+            @include box-sizing(border-box);
+            &:first-child { margin-left:0px;}
+            &:hover {
+                background:$blue;
+                cursor:pointer;
+            }
+        }
+    }
 }
 
 @media all and (max-width: 53.5em) { // 800px / 16 = 53em
-	$tileWidth:7vw;
-	$numberWidth:5vw;
-	header {
-		text-align:center;
-		padding-bottom:1em;
-		margin-bottom:0.8em;
-		h1 {
-			font-size:$tileWidth;
-		}
-	}
-	.content {
-		width:$tileWidth * 9 + 4vw;
-		#selection{
-			.number{
-				width:$numberWidth;
-				height:$numberWidth;
-				@include textcenter($numberWidth);
-				h2{
-					font-size:$numberWidth;
-				}
-			}
-		} 
-		#board_wrapper {
-			width:$tileWidth * 9;
-			.wrapper {
-				.sudoku_tile {
-					width:$tileWidth;
-					height:$tileWidth;
-					@include textcenter($tileWidth);
-					h2 {
-						font-size:$tileWidth;
-					}
-				}
-			}
-		}
-		#options {
-			.btnOption {
-				width:14.1vw;
-				height:4.5vw;
-				margin-left:1vw;
-				font-size:2.2vw;
-				&:first-child{
-					margin-left:0px;
-				} 
-			}
-		}
-	}
+    $tileWidth:7vw;
+    $numberWidth:5vw;
+    #model { padding-top:35vw;}
+    header {
+        text-align:center;
+        padding-bottom:1em;
+        margin-bottom:0.8em;
+        h1 { font-size:$tileWidth;}
+    }
+    .content {
+        width:$tileWidth * 9 + 4vw;
+        #selection{
+            .number{
+                width:$numberWidth;
+                height:$numberWidth;
+                @include textcenter($numberWidth);
+                h2{ font-size:$numberWidth;}
+            }
+        } 
+        #board_wrapper {
+            width:$tileWidth * 9;
+            .wrapper {
+                .sudoku_tile {
+                    width:$tileWidth;
+                    height:$tileWidth;
+                    @include textcenter($tileWidth);
+                    h2 { font-size:$tileWidth;}
+                }
+            }
+        }
+        #options {
+            .btn_option {
+                width:14.1vw;
+                height:4.5vw;
+                margin-left:1vw;
+                font-size:2.2vw;
+                &:first-child{ margin-left:0px;} 
+            }
+        }
+    }
 }
 @media all and (max-width: 40em) { // 800px / 16 = 53em
-	$tileWidth:8vw;
-	$numberWidth:6vw;
-	header {
-		text-align:center;
-		padding-bottom:1em;
-		margin-bottom:0.8em;
-		h1 {
-			font-size:$tileWidth;
-		}
-	}
-	.content {
-		width:$tileWidth * 9 + 4vw;
-		#selection{
-			.number{
-				width:$numberWidth;
-				height:$numberWidth;
-				@include textcenter($numberWidth);
-				h2 {
-					font-size: $numberWidth;
-				}
-			}
-		} 
-		#board_wrapper {
-			width:$tileWidth * 9;
-			.wrapper {
-				.sudoku_tile {
-					width:$tileWidth;
-					height:$tileWidth;
-					@include textcenter($tileWidth);
-					h2 {
-						font-size:$numberWidth;
-					}
-				}
-				.border_left {
-					border-left-width:3px;
-				}
-				.border_top{
-					border-top-width:3px;
-				}
-			}
-		}
-		#options {
-			.btnOption {
-				width:12vw;
-				height:8vw;
-				margin-left:4vw;
-				font-size: 3vw;
-				&:first-child{
-					margin-left:0px;
-				}
-			}
-		}
-	}
+    $tileWidth:8vw;
+    $numberWidth:6vw;
+    #model { padding-top:45vw; }
+    header {
+        text-align:center;
+        padding-bottom:1em;
+        margin-bottom:0.8em;
+        h1 { font-size:$tileWidth;}
+    }
+    .content {
+        width:$tileWidth * 9 + 4vw;
+        #selection{
+            .number{
+                width:$numberWidth;
+                height:$numberWidth;
+                @include textcenter($numberWidth);
+                h2 { font-size: $numberWidth;}
+            }
+        } 
+        #board_wrapper {
+            width:$tileWidth * 9;
+            .wrapper {
+                .sudoku_tile {
+                    width:$tileWidth;
+                    height:$tileWidth;
+                    @include textcenter($tileWidth);
+                    h2 { font-size:$numberWidth;}
+                }
+                .border_left { border-left-width:3px;}
+                .border_top{ border-top-width:3px;}
+            }
+        }
+        #options {
+            .btn_option {
+                width:12vw;
+                height:8vw;
+                margin-left:4vw;
+                font-size: 3vw;
+                &:first-child{ margin-left:0px;}
+            }
+        }
+    }
 }
 
 

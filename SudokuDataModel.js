@@ -5,9 +5,11 @@ function SudokuDataModel(initData) {
     this.editData = function(row, col, value) {
         if (row != null && col != null) {
             data[row][col] = value;
+            saveDataToLocal(data);
         }
     }
     this.resetData = function(row, col) {
+    	// reset Data to initial value
         if (row != null && col != null) data[row][col] = initData[row][col];
         else if (row != null) data[row] = initData[row].slice();
         else if (col != null) {
@@ -15,8 +17,10 @@ function SudokuDataModel(initData) {
                 data[r][col] = initData[r][col];
             }
         }
+        saveDataToLocal(data);
     }
     this.validSudoku = function() {
+    	// Check if the whole Sudoku is valid
         for (var r = 0; r < 9; r++) {
             for (var c = 0; c < 9; c++) {
                 if (data[r][c] == '.') return false
@@ -43,6 +47,7 @@ function SudokuDataModel(initData) {
     }
     this.resetAll = function() {
         data = initData;
+        saveDataToLocal(data);
     }
     this.getOriginData = function() {
         return initData.map(function(arr) {
@@ -53,5 +58,10 @@ function SudokuDataModel(initData) {
         return data.map(function(arr) {
             return arr.slice();
         })
+    }
+    function saveDataToLocal(data) {
+    	// This function save data to localStorage['sudokuCurrent']
+    	// So it could allow use to continue with last time's result
+    	localStorage['sudokuCurrent'] = JSON.stringify(data);
     }
 }

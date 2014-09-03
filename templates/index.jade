@@ -8,6 +8,7 @@ html(lang="en")
 		script(type="text/javascript" src="../SudokuDataModel.js")
 		script(type="text/javascript" src="../generateData.js")
 		script(type="text/javascript" src="../SudokuView.js")
+		script(type="text/javascript" src="../ModelView.js")
 		script(type="text/javascript" src="../Sudoku.js")
 	body
 		div#container
@@ -35,7 +36,12 @@ html(lang="en")
 							- row++
 							- col = 0
 				aside#options
-					button(class='btnOption', id='clearTile') Clear Tile
-					button(class='btnOption', id='clearRow')  Clear Row
-					button(class='btnOption', id='clearCol')  Clear Col.
-					button(class='btnOption', id='clearAll')  Clear All
+					button(class='btn_option', id='clear_tile') Clear Tile
+					button(class='btn_option', id='clear_row')  Clear Row
+					button(class='btn_option', id='clear_col')  Clear Col.
+					button(class='btn_option', id='clear_all')  Clear All
+			div#model
+				div.content
+					h1 Congratulations! You solve the Sudoku!
+					button(class='btn_option_new_game', id='newGame') New Game
+					button(class='btn_option_new_game', id='cancel')  Cancel

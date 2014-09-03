@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../SudokuDataModel.js"></script>
     <script type="text/javascript" src="../generateData.js"></script>
     <script type="text/javascript" src="../SudokuView.js"></script>
+    <script type="text/javascript" src="../ModelView.js"></script>
     <script type="text/javascript" src="../Sudoku.js"></script>
   </head>
   <body>
@@ -311,12 +312,19 @@
           </div>
         </div>
         <aside id="options">
-          <button id="clearTile" class="btnOption">Clear Tile</button>
-          <button id="clearRow" class="btnOption"> Clear Row</button>
-          <button id="clearCol" class="btnOption"> Clear Col.</button>
-          <button id="clearAll" class="btnOption"> Clear All</button>
+          <button id="clear_tile" class="btn_option">Clear Tile</button>
+          <button id="clear_row" class="btn_option"> Clear Row</button>
+          <button id="clear_col" class="btn_option"> Clear Col.</button>
+          <button id="clear_all" class="btn_option"> Clear All</button>
         </aside>
       </main>
+      <div id="model">
+        <div class="content">
+          <h1>Congratulations! You solve the Sudoku!</h1>
+          <button id="newGame" class="btn_option_new_game">New Game</button>
+          <button id="cancel" class="btn_option_new_game"> Cancel</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
