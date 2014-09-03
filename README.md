@@ -5,9 +5,11 @@ A Simple Sodoku Game
 ./templates/index.html
 
 ***** Only FireFox can't load text font locally *****
+
 ***** So For better result, use Chrome/Safari/Opera *****
 
 How to play?
+
 1.Select a tile
   If it has number on it, the board will highlight tiles have same number
   If not, the board will highlight the row and column this tile is in
@@ -33,6 +35,7 @@ Sudoku.js get data from generateData.js
 When the game is finished, Sudoku.js let ModalView.js to display a modal, to either start a new game or cancel.
 
 Technics:
+
 1.Jade template engine
   It helps avoid writing duplicate html. It very helpful especially under this case. 
   I learned it for this project.
@@ -49,9 +52,10 @@ Technics:
   Good for different size devices
 
 Following work:
+
 If have additional time I would:
-  1.Create a button to save the data(actually now the data has been saved in localStorage['sudokuCurrent']) and retrive data
-  to continue the game any time
+
+  1.Create a button to save the data(actually now the data has been saved in localStorage['sudokuCurrent']) and retrive data to continue the game any time
   
   2.Add some sound effect or animation.
   
