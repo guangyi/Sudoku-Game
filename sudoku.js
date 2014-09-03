@@ -1,15 +1,5 @@
-localStorage('suduku',{})
 $(document).ready(function() {
-    var initData = [[6,'.',2,'.','.','.','.','.',7],
-                    [8,9,'.',2,'.','.','.',6,'.'],
-                    ['.',5,4,'.',6,'.',8,'.',2],
-                    ['.',7,'.',6, '.',5,4,'.','.'],
-                    [4,'.','.',3,'.',9, '.','.',6],
-                    [9,6,'.','.','.','.',2,'.',5],
-                    ['.',4,'.','.',7,'.','.',5,3],
-                    ['.',8,'.','.','.','.',9,4,'.'],
-                    ['.', '.',3,'.','.',6,7,'.',8]];
-    
+    var initData = getInitData();
     var sudokuDataModel = new SudokuDataModel(initData);
     var sudokuView = new SudokuView();
     sudokuView.initView(initData);
@@ -44,21 +34,22 @@ $(document).ready(function() {
                 }
                 else {
                     sudokuDataModel.editData(row, col, curValue);
-                    //sudokuView.clearHighLight('cell_sameVal');
                     sudokuView.highlightWrong(currentTile);
                 }
             }
         }
     });
-
     $('#options').on('click', function(e) {
         if (e.target.className == 'btnOption') {
             var id = e.target.id;
             var currentTile = $('.cell_onclick');
             if (id == 'clearAll') {
-                var initData = sudokuDataModel.getOriginData();
-                sudokuView.initView(initData);
-                sudokuDataModel.resetAll();
+                var confirmed = confirm('Are you sure you want to clear ALL data?');
+                if (confirmed) {
+                    var initData = sudokuDataModel.getOriginData();
+                    sudokuView.initView(initData);
+                    sudokuDataModel.resetAll();
+                }
             } 
             else if (currentTile.length == 0 ){
                 alert("select a tile to clear");
@@ -82,6 +73,5 @@ $(document).ready(function() {
                 }
             }
         }
-        
     });
 });
